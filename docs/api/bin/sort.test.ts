@@ -16,7 +16,9 @@ const runSort = (doc: unknown, times = 1) => {
     writeFileSync(target, yaml.stringify(doc));
     const contents: string[] = [];
     for (let i = 0; i < times; i++) {
-      execFileSync(process.execPath, [script, "--target", target], { encoding: "utf8" });
+      execFileSync(process.execPath, [script, "--target", target], {
+        encoding: "utf8",
+      });
       contents.push(readFileSync(target, "utf8"));
     }
     return contents;
@@ -86,9 +88,25 @@ test("components.securitySchemes のキーが既定順に並ぶ", () => {
 test("paths に大文字と記号が混ざっても code unit 順に並ぶ", () => {
   const result = sortOnce({
     openapi: "3.2.1",
-    paths: { "/a_b": {}, "/aB": {}, "/a-b": {}, "/A": {}, "/a": {}, "/Z": {}, "/b": {} },
+    paths: {
+      "/a_b": {},
+      "/aB": {},
+      "/a-b": {},
+      "/A": {},
+      "/a": {},
+      "/Z": {},
+      "/b": {},
+    },
   });
-  assert.deepEqual(Object.keys(result.paths), ["/A", "/Z", "/a", "/a-b", "/aB", "/a_b", "/b"]);
+  assert.deepEqual(Object.keys(result.paths), [
+    "/A",
+    "/Z",
+    "/a",
+    "/a-b",
+    "/aB",
+    "/a_b",
+    "/b",
+  ]);
 });
 
 test("components.schemas の群内が、大文字と記号が混ざっても code unit 順に並ぶ", () => {
@@ -158,7 +176,12 @@ test("2 回続けて実行しても 1 回目の結果から内容が変わらな
       openapi: "3.2.1",
       paths: { "/b": {}, "/a": {} },
       components: {
-        schemas: { ResponseA: empty(), Zeta: empty(), EnumA: empty(), Alpha: empty() },
+        schemas: {
+          ResponseA: empty(),
+          Zeta: empty(),
+          EnumA: empty(),
+          Alpha: empty(),
+        },
         securitySchemes: {
           b: { type: "http", scheme: "basic" },
           a: { type: "http", scheme: "basic" },
@@ -170,7 +193,12 @@ test("2 回続けて実行しても 1 回目の結果から内容が変わらな
   assert.equal(second, first);
   const parsed = yaml.parse(first);
   assert.deepEqual(Object.keys(parsed.paths), ["/a", "/b"]);
-  assert.deepEqual(Object.keys(parsed.components.schemas), ["Alpha", "Zeta", "EnumA", "ResponseA"]);
+  assert.deepEqual(Object.keys(parsed.components.schemas), [
+    "Alpha",
+    "Zeta",
+    "EnumA",
+    "ResponseA",
+  ]);
   assert.deepEqual(Object.keys(parsed.components.securitySchemes), ["a", "b"]);
 });
 
@@ -195,7 +223,13 @@ test("paths と components 以外のトップレベルのキーの値と順序�
     paths: { "/b": {}, "/a": {} },
     tags: [{ name: "z" }, { name: "a" }],
   });
-  assert.deepEqual(Object.keys(result), ["openapi", "info", "servers", "paths", "tags"]);
+  assert.deepEqual(Object.keys(result), [
+    "openapi",
+    "info",
+    "servers",
+    "paths",
+    "tags",
+  ]);
   assert.equal(result.openapi, "3.2.1");
   assert.deepEqual(result.info, info);
   assert.deepEqual(result.servers, servers);

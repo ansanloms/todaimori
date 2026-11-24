@@ -31,8 +31,16 @@ const isWatched = (file: string): boolean => {
 
 // redocly の実行ファイルは、固定した版の package.json の bin から解決する。
 const redoclyBin = (): string => {
-  const pkgPath = path.join(repoRoot, "node_modules", "@redocly", "cli", "package.json");
-  const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as { bin: string | Record<string, string> };
+  const pkgPath = path.join(
+    repoRoot,
+    "node_modules",
+    "@redocly",
+    "cli",
+    "package.json",
+  );
+  const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as {
+    bin: string | Record<string, string>;
+  };
   const bin = typeof pkg.bin === "string" ? pkg.bin : pkg.bin.redocly;
   return path.join(path.dirname(pkgPath), bin);
 };
@@ -113,7 +121,10 @@ function redoc(): Plugin {
       void generate();
 
       server.middlewares.use(async (req, res, next) => {
-        if (req.method !== "GET" || (req.url !== "/" && req.url !== "/index.html")) {
+        if (
+          req.method !== "GET" ||
+          (req.url !== "/" && req.url !== "/index.html")
+        ) {
           return next();
         }
         await running;
