@@ -1,12 +1,13 @@
 version: 2
 updates:
-  # 公開直後のバージョンを避ける遅延は .npmrc の min-release-age に任せる。
-  # Dependabot はその値を cooldown の下限として適用するので、ここには cooldown を置かない。
-  # 参照: https://github.com/dependabot/dependabot-core/pull/15132
+  # zizmor の dependabot-cooldown を通すため、cooldown を明示する。
+  # 値は docs/api/.npmrc の min-release-age (7 日) と揃える。
   - package-ecosystem: "npm"
     directory: "/docs/api"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 7
     commit-message:
       prefix: "build"
     groups:
