@@ -1,7 +1,19 @@
 version: 2
 updates:
   # zizmor の dependabot-cooldown を通すため、cooldown を明示する。
-  # 値は docs/api/.npmrc の min-release-age (7 日) と揃える。
+  # 値は .npmrc と docs/api/.npmrc の min-release-age (7 日) と揃える。
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "build"
+    groups:
+      npm:
+        patterns:
+          - "*"
   - package-ecosystem: "npm"
     directory: "/docs/api"
     schedule:

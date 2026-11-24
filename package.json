@@ -1,0 +1,21 @@
+{
+  "name": "todaimori",
+  "private": true,
+  "workspaces": [
+    "packages/server",
+    "packages/client/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "lint": "oxlint && oxfmt --check",
+    "fix": "oxlint --fix && oxfmt",
+    "test": "node --test \"packages/**/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "oxfmt": "0.79.0",
+    "oxlint": "1.94.0",
+    "typescript": "7.0.2"
+  }
+}
