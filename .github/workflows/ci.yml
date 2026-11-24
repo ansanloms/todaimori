@@ -17,9 +17,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Clone repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - name: Setup Node.js environment
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v7.1.0
         with:
           node-version-file: docs/api/.node-version
           cache: npm
@@ -33,9 +35,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Clone repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - name: Setup Node.js environment
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v7.1.0
         with:
           node-version-file: docs/api/.node-version
           cache: npm
@@ -49,9 +53,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Clone repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - name: Setup Node.js environment
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v7.1.0
         with:
           node-version-file: docs/api/.node-version
           cache: npm
