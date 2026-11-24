@@ -1,0 +1,19 @@
+openapi: 3.2.1
+info:
+  version: 0.0.1
+  title: todaimori API
+  description:
+    $ref: ./README.md
+servers:
+  - url: https://api.example.org
+    description: Production Server
+paths:
+  /health:
+    $ref: ./paths/health.yaml
+components:
+  schemas:
+    ResponseEmpty:
+      $ref: ./components/schemas/ResponseEmpty.yaml
+    ResponseError:
+      $ref: ./components/schemas/ResponseError.yaml
+security: []
