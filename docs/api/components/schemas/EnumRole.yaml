@@ -1,0 +1,4 @@
+type: string
+description: 呼び出し元のロール。
+enum:
+  - user

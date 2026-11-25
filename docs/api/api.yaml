@@ -8,12 +8,20 @@ servers:
   - url: https://api.example.org
     description: Production Server
 paths:
-  /health:
-    $ref: ./paths/health.yaml
+  /connection:
+    $ref: ./paths/connection.yaml
 components:
   schemas:
-    ResponseEmpty:
-      $ref: ./components/schemas/ResponseEmpty.yaml
+    EnumRole:
+      $ref: ./components/schemas/EnumRole.yaml
     ResponseError:
       $ref: ./components/schemas/ResponseError.yaml
-security: []
+    ResponseGetConnection:
+      $ref: ./components/schemas/ResponseGetConnection.yaml
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth:
+      - user

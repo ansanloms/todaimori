@@ -60,5 +60,11 @@
   "env": {
     "builtin": true
   },
-  "ignorePatterns": ["coverage/", ".claude/"]
+  "ignorePatterns": [
+    "coverage/",
+    ".claude/",
+    "packages/*/api/generated/",
+    "packages/client/*/api/generated/",
+    "**/*.gen.json"
+  ]
 }

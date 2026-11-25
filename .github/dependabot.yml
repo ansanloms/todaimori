@@ -10,6 +10,9 @@ updates:
       default-days: 7
     commit-message:
       prefix: "build"
+    # 0.0.0-next-* を固定している (TypeScript 7 に対応した版)。安定版への更新は TS 7 非対応に戻る。
+    ignore:
+      - dependency-name: "@hey-api/openapi-ts"
     groups:
       npm:
         patterns:

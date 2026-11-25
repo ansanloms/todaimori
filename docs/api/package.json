@@ -14,7 +14,8 @@
     "build:docs": "redocly build-docs ./api.yaml --config ./redocly.yaml --inlineBundle --output ./dist/index.html",
     "sort": "node ./bin/sort.ts",
     "start": "vite preview --port 4000",
-    "dev": "vite"
+    "dev": "vite",
+    "bundle:json": "redocly bundle ./api.yaml --config ./redocly.yaml --ext json --output"
   },
   "devDependencies": {
     "@ansanloms/redocly-plugins": "github:ansanloms/redocly-plugins#0.3.0",

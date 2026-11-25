@@ -1,0 +1,11 @@
+type: object
+description: 接続確認の結果。
+required:
+  - apiVersion
+  - role
+properties:
+  apiVersion:
+    type: string
+    description: server が提供する API 定義の版。
+  role:
+    $ref: ./EnumRole.yaml

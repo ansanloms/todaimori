@@ -1,3 +1,0 @@
-type: object
-description:
-  $ref: "./descriptions/ResponseEmpty.md"

@@ -10,7 +10,8 @@
     "check": "tsc --noEmit",
     "lint": "oxlint && oxfmt --check && textlint .",
     "fix": "oxlint --fix && textlint . --fix && oxfmt",
-    "test": "node --test \"packages/**/*.test.ts\""
+    "test": "node --test \"packages/**/*.test.ts\"",
+    "generate": "npm --prefix docs/api run bundle:json -- ./dist/api.json && cp -f docs/api/dist/api.json packages/server/api/openapi.gen.json && npm run generate --workspaces --if-present"
   },
   "devDependencies": {
     "@ansanloms/textlint-plugin-yaml-keys": "github:ansanloms/textlint-plugin-yaml-keys#0.3.0",

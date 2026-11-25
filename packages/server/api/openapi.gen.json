@@ -1,0 +1,180 @@
+{
+  "openapi": "3.2.1",
+  "info": {
+    "version": "0.0.1",
+    "title": "todaimori API",
+    "description": "# todaimori API\n\ntodaimori の server が提供する API (REST + SSE) の定義である。\n"
+  },
+  "servers": [
+    {
+      "url": "https://api.example.org",
+      "description": "Production Server"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": [
+        "user"
+      ]
+    }
+  ],
+  "paths": {
+    "/connection": {
+      "get": {
+        "operationId": "getConnection",
+        "summary": "接続を確認する。",
+        "tags": [
+          "connection"
+        ],
+        "description": "呼び出し元の token を検証し、server の API 版と呼び出し元のロールを返す。\n",
+        "responses": {
+          "200": {
+            "description": "処理成功時。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseGetConnection"
+                },
+                "examples": {
+                  "succeeded": {
+                    "value": {
+                      "apiVersion": "0.0.1",
+                      "role": "user"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Authorization ヘッダの形式が不正な場合。",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                },
+                "examples": {
+                  "badRequest": {
+                    "value": {
+                      "type": "about:blank",
+                      "title": "Bad Request",
+                      "status": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "token が無い、または無効な場合。",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                },
+                "examples": {
+                  "unauthorized": {
+                    "value": {
+                      "type": "about:blank",
+                      "title": "Unauthorized",
+                      "status": 401
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "処理失敗時。",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseError"
+                },
+                "examples": {
+                  "processingFailed": {
+                    "value": {
+                      "type": "about:blank",
+                      "title": "Internal Server Error",
+                      "status": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EnumRole": {
+        "type": "string",
+        "description": "呼び出し元のロール。",
+        "enum": [
+          "user"
+        ]
+      },
+      "ResponseError": {
+        "type": "object",
+        "description": "RFC 9457 Problem Details for HTTP APIs",
+        "required": [
+          "type",
+          "title",
+          "status"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri",
+            "default": "about:blank",
+            "description": "問題種別を識別する URI reference。"
+          },
+          "title": {
+            "type": "string",
+            "description": "問題種別の人間可読な簡潔な要約。"
+          },
+          "status": {
+            "type": "integer",
+            "minimum": 100,
+            "maximum": 599,
+            "description": "HTTP ステータスコード。"
+          },
+          "detail": {
+            "type": "string",
+            "description": "当該インスタンス固有の問題の説明。"
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri-reference",
+            "description": "問題発生インスタンスを識別する URI reference。"
+          }
+        }
+      },
+      "ResponseGetConnection": {
+        "type": "object",
+        "description": "接続確認の結果。",
+        "required": [
+          "apiVersion",
+          "role"
+        ],
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "description": "server が提供する API 定義の版。"
+          },
+          "role": {
+            "$ref": "#/components/schemas/EnumRole"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
