@@ -13,6 +13,11 @@ get:
           itemSchema:
             $ref: ../components/schemas/ResponseGetEvents.yaml
           examples:
+            conversationBusy:
+              serializedValue: |+
+                event: conversation.status
+                data: {"conversationId":"c-0001","status":"busy"}
+
             turnStarted:
               serializedValue: |+
                 event: turn.started
@@ -27,6 +32,11 @@ get:
               serializedValue: |+
                 event: turn.ended
                 data: {"conversationId":"c-0001","turnId":"t-0001","result":"completed"}
+
+            conversationIdle:
+              serializedValue: |+
+                event: conversation.status
+                data: {"conversationId":"c-0001","status":"idle"}
 
     500:
       description: 処理失敗時。

@@ -1,0 +1,5 @@
+type: string
+description: 会話の状態。値は後から増えうる。
+enum:
+  - idle
+  - busy
