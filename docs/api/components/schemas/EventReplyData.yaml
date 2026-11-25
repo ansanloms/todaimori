@@ -1,0 +1,20 @@
+type: object
+description: 回答テキストの断片。
+required:
+  - conversationId
+  - turnId
+  - blockId
+  - text
+properties:
+  conversationId:
+    type: string
+    description: 会話の ID。
+  turnId:
+    type: string
+    description: Turn の ID。server が振る不透明な文字列である。
+  blockId:
+    type: string
+    description: 断片が属するまとまりの ID。同じ blockId の断片を届いた順に連結すると、1 つのまとまりの全文になる。
+  text:
+    type: string
+    description: 回答テキストの断片。

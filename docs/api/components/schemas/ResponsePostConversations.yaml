@@ -1,0 +1,3 @@
+description: 作成した会話。
+allOf:
+  - $ref: ./Conversation.yaml

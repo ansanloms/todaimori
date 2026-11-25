@@ -1,0 +1,50 @@
+description: SSE の 1 イベント。event の値で data の形が決まる。イベントは追加のみで増える。client は未知の event を受け取っても検証エラーにせず無視する。この oneOf は現時点で定義済みのイベントの一覧である。
+oneOf:
+  - type: object
+    description: Turn が始まった。
+    required:
+      - event
+      - data
+    properties:
+      event:
+        type: string
+        const: turn.started
+        description: イベント種別。
+      data:
+        type: string
+        description: イベントの本体。JSON 文字列である。
+        contentMediaType: application/json
+        contentSchema:
+          $ref: ./EventTurnStartedData.yaml
+  - type: object
+    description: 回答テキストの断片。
+    required:
+      - event
+      - data
+    properties:
+      event:
+        type: string
+        const: reply
+        description: イベント種別。
+      data:
+        type: string
+        description: イベントの本体。JSON 文字列である。
+        contentMediaType: application/json
+        contentSchema:
+          $ref: ./EventReplyData.yaml
+  - type: object
+    description: Turn が終わった。
+    required:
+      - event
+      - data
+    properties:
+      event:
+        type: string
+        const: turn.ended
+        description: イベント種別。
+      data:
+        type: string
+        description: イベントの本体。JSON 文字列である。
+        contentMediaType: application/json
+        contentSchema:
+          $ref: ./EventTurnEndedData.yaml

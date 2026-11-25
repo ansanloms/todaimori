@@ -1,0 +1,40 @@
+get:
+  operationId: getEvents
+  summary: イベントの購読。
+  tags:
+    - events
+  description:
+    $ref: ./descriptions/getEvents.md
+  responses:
+    200:
+      description: 処理成功時。
+      content:
+        text/event-stream:
+          itemSchema:
+            $ref: ../components/schemas/ResponseGetEvents.yaml
+          examples:
+            turnStarted:
+              serializedValue: |+
+                event: turn.started
+                data: {"conversationId":"c-0001","turnId":"t-0001"}
+
+            reply:
+              serializedValue: |+
+                event: reply
+                data: {"conversationId":"c-0001","turnId":"t-0001","blockId":"b-0001","text":"宿まであと 40 km だ。"}
+
+            turnEnded:
+              serializedValue: |+
+                event: turn.ended
+                data: {"conversationId":"c-0001","turnId":"t-0001","result":"completed"}
+
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseError.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseError/default.yaml

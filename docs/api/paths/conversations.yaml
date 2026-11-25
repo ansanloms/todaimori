@@ -1,21 +1,21 @@
-get:
-  operationId: getHealth
-  summary: 死活確認。
+post:
+  operationId: postConversations
+  summary: 会話の作成。
   tags:
-    - health
+    - conversations
   description:
-    $ref: ./descriptions/getHealth.md
+    $ref: ./descriptions/postConversations.md
   responses:
-    200:
-      description: 処理成功時。
+    201:
+      description: 会話を作成した場合。
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/ResponseEmpty.yaml
+            $ref: ../components/schemas/ResponsePostConversations.yaml
           examples:
-            succeeded:
+            created:
               value:
-                $ref: ../examples/ResponseEmpty/default.yaml
+                $ref: ../examples/ResponsePostConversations/default.yaml
     500:
       description: 処理失敗時。
       content:

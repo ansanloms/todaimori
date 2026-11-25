@@ -1,0 +1,18 @@
+type: object
+description: Turn が終わった。
+required:
+  - conversationId
+  - turnId
+  - result
+properties:
+  conversationId:
+    type: string
+    description: 会話の ID。
+  turnId:
+    type: string
+    description: Turn の ID。server が振る不透明な文字列である。
+  result:
+    $ref: ./EnumTurnResult.yaml
+  message:
+    type: string
+    description: result が failed のときの理由。

@@ -1,0 +1,12 @@
+type: object
+description: Turn が始まった。
+required:
+  - conversationId
+  - turnId
+properties:
+  conversationId:
+    type: string
+    description: 会話の ID。
+  turnId:
+    type: string
+    description: Turn の ID。server が振る不透明な文字列である。
