@@ -3,14 +3,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "openapi-ts -f openapi-ts.config.ts",
+    "generate": "KUBB_DISABLE_TELEMETRY=1 kubb generate",
     "start": "node main.ts"
   },
   "dependencies": {
+    "@cfworker/json-schema": "4.1.6",
     "@hono/node-server": "2.1.9",
     "hono": "4.13.19"
   },
   "devDependencies": {
-    "@hey-api/openapi-ts": "0.0.0-next-20260930190945"
+    "@kubb/adapter-oas": "5.21.1",
+    "@kubb/parser-ts": "5.21.1",
+    "@kubb/plugin-ts": "5.5.5",
+    "kubb": "5.21.1"
   }
 }

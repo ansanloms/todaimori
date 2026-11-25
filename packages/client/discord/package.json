@@ -1,12 +1,5 @@
 {
   "name": "@ansanloms/todaimori-client-discord",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "generate": "openapi-ts -f openapi-ts.config.ts",
-    "start": "node main.ts"
-  },
-  "devDependencies": {
-    "@hey-api/openapi-ts": "0.0.0-next-20260930190945"
-  }
+  "type": "module"
 }

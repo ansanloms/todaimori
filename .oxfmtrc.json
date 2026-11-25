@@ -10,7 +10,6 @@
   "ignorePatterns": [
     ".claude/**",
     "packages/*/api/generated/**",
-    "packages/client/*/api/generated/**",
     "**/*.gen.json"
   ]
 }
