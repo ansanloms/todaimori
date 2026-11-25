@@ -1,2 +1,2 @@
-// @todaimori/discord-client の入口。実装はまだ無い。
+// @ansanloms/todaimori-discord-client の入口。実装はまだ無い。
 export {};
