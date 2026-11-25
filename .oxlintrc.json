@@ -1,0 +1,64 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "curly": "error",
+    "typescript/no-explicit-any": "error",
+    "prefer-const": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.ts"],
+      "rules": {
+        "typescript/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["packages/server/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@ansanloms/todaimori-client-*",
+                  "@ansanloms/todaimori-client-*/**",
+                  "**/client/**"
+                ],
+                "message": "server から client を import しない (別プロセスで、REST + SSE だけで繋ぐ)"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["packages/client/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": [
+                  "@ansanloms/todaimori-server",
+                  "@ansanloms/todaimori-server/**",
+                  "**/server/**"
+                ],
+                "message": "client から server を import しない (別プロセスで、REST + SSE だけで繋ぐ)"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "env": {
+    "builtin": true
+  },
+  "ignorePatterns": ["coverage/", ".claude/"]
+}
