@@ -27,8 +27,10 @@ const sortKeys = <T>(
       .map((key) => [key, source[key]]),
   );
 
+// 接頭辞の群に入るのは、接頭辞の直後が ASCII の大文字 (A-Z) の名前だけ (EnumStatus 等)。
+// Requester・Enum・Response200・Enum_b は、接頭辞なしの群に入る。
 const weight = (name: string) =>
-  `${SCHEMA_PREFIXES.findIndex((prefix) => name.startsWith(prefix)) + 1}${name}`;
+  `${SCHEMA_PREFIXES.findIndex((prefix) => name.startsWith(prefix) && /^[A-Z]/.test(name.slice(prefix.length))) + 1}${name}`;
 
 const apiDoc = yaml.parse(
   await readFile(values.target, "utf8"),
