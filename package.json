@@ -13,7 +13,7 @@
     "test": "node --test \"packages/**/*.test.ts\""
   },
   "devDependencies": {
-    "@ansanloms/textlint-plugin-yaml-keys": "github:ansanloms/textlint-plugin-yaml-keys#0.2.0",
+    "@ansanloms/textlint-plugin-yaml-keys": "github:ansanloms/textlint-plugin-yaml-keys#0.3.0",
     "@proofdict/textlint-rule-proofdict": "3.1.2",
     "@textlint-ja/textlint-rule-preset-ai-writing": "1.7.0",
     "@types/node": "26.6.6",
