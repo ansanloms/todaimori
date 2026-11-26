@@ -1,7 +1,8 @@
 in: path
 name: id
 required: true
-description: "会話の ID。client が決める。server は中身を解釈しない。英数字で始まり、英数字と `.` `_` `:` `-` を使える。大文字と小文字を区別し、正規化しない。"
+description:
+  $ref: "./descriptions/ConversationId.md"
 schema:
   type: string
   minLength: 1
