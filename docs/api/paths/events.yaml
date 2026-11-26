@@ -53,37 +53,37 @@ get:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/approvalRequested.yaml
               serializedValue: |+
-                data: {"type":"approval.requested","approval":{"id":"a-0001","conversationId":"c-0001","toolName":"Bash","input":{"command":"npm run build"},"description":"ビルドを実行する。","rules":["Bash(npm run *)"],"requestedAt":"2026-11-26T09:00:00Z","expiresAt":"2026-11-26T09:10:00Z"}}
+                data: {"type":"approval.requested","approval":{"id":"a-0001","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"toolName":"Bash","input":{"command":"npm run build"},"description":"ビルドを実行する。","rules":["Bash(npm run *)"],"requestedAt":"2026-11-26T09:00:00Z","expiresAt":"2026-11-26T09:10:00Z"}}
 
             approvalResolved:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/approvalResolved.yaml
               serializedValue: |+
-                data: {"type":"approval.resolved","approval":{"id":"a-0001","conversationId":"c-0001","toolName":"Bash","input":{"command":"npm run build"},"description":"ビルドを実行する。","rules":["Bash(npm run *)"],"requestedAt":"2026-11-26T09:00:00Z","expiresAt":"2026-11-26T09:10:00Z"}}
+                data: {"type":"approval.resolved","approval":{"id":"a-0001","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"toolName":"Bash","input":{"command":"npm run build"},"description":"ビルドを実行する。","rules":["Bash(npm run *)"],"requestedAt":"2026-11-26T09:00:00Z","expiresAt":"2026-11-26T09:10:00Z"}}
 
             approvalRejected:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/approvalRejected.yaml
               serializedValue: |+
-                data: {"type":"approval.rejected","approval":{"id":"a-0002","conversationId":"c-0001","toolName":"Bash","input":{"command":"rm -rf ./dist"},"requestedAt":"2026-11-26T09:01:00Z","expiresAt":"2026-11-26T09:11:00Z"},"reason":"denied","comment":"dist は消さずに、ビルドだけ実行してくれ。"}
+                data: {"type":"approval.rejected","approval":{"id":"a-0002","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"toolName":"Bash","input":{"command":"rm -rf ./dist"},"requestedAt":"2026-11-26T09:01:00Z","expiresAt":"2026-11-26T09:11:00Z"},"reason":"declined","comment":"dist は消さずに、ビルドだけ実行してくれ。"}
 
             questionRequested:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/questionRequested.yaml
               serializedValue: |+
-                data: {"type":"question.requested","question":{"id":"q-0001","conversationId":"c-0001","questions":[{"question":"宿はどちらにする？","header":"宿","options":[{"label":"駅前","description":"駅から徒歩 1 分の宿。"},{"label":"海沿い","description":"海が見える宿。駅からは遠い。"}],"multiSelect":false},{"question":"食事はどれを付ける？","header":"食事","options":[{"label":"朝食","description":"朝の食事。"},{"label":"夕食","description":"夜の食事。"}],"multiSelect":true}],"requestedAt":"2026-11-27T09:00:00Z","expiresAt":"2026-11-27T09:10:00Z"}}
+                data: {"type":"question.requested","question":{"id":"q-0001","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"questions":[{"question":"宿はどちらにする？","header":"宿","options":[{"label":"駅前","description":"駅から徒歩 1 分の宿。"},{"label":"海沿い","description":"海が見える宿。駅からは遠い。"}],"multiSelect":false},{"question":"食事はどれを付ける？","header":"食事","options":[{"label":"朝食","description":"朝の食事。"},{"label":"夕食","description":"夜の食事。"}],"multiSelect":true}],"requestedAt":"2026-11-27T09:00:00Z","expiresAt":"2026-11-27T09:10:00Z"}}
 
             questionResolved:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/questionResolved.yaml
               serializedValue: |+
-                data: {"type":"question.resolved","question":{"id":"q-0001","conversationId":"c-0001","questions":[{"question":"宿はどちらにする？","header":"宿","options":[{"label":"駅前","description":"駅から徒歩 1 分の宿。"},{"label":"海沿い","description":"海が見える宿。駅からは遠い。"}],"multiSelect":false},{"question":"食事はどれを付ける？","header":"食事","options":[{"label":"朝食","description":"朝の食事。"},{"label":"夕食","description":"夜の食事。"}],"multiSelect":true}],"requestedAt":"2026-11-27T09:00:00Z","expiresAt":"2026-11-27T09:10:00Z"},"answers":[{"labels":["海沿い"]},{"labels":["朝食","夕食"]}]}
+                data: {"type":"question.resolved","question":{"id":"q-0001","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"questions":[{"question":"宿はどちらにする？","header":"宿","options":[{"label":"駅前","description":"駅から徒歩 1 分の宿。"},{"label":"海沿い","description":"海が見える宿。駅からは遠い。"}],"multiSelect":false},{"question":"食事はどれを付ける？","header":"食事","options":[{"label":"朝食","description":"朝の食事。"},{"label":"夕食","description":"夜の食事。"}],"multiSelect":true}],"requestedAt":"2026-11-27T09:00:00Z","expiresAt":"2026-11-27T09:10:00Z"},"answers":[{"labels":["海沿い"]},{"labels":["朝食","夕食"]}]}
 
             questionRejected:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/questionRejected.yaml
               serializedValue: |+
-                data: {"type":"question.rejected","question":{"id":"q-0001","conversationId":"c-0001","questions":[{"question":"宿はどちらにする？","header":"宿","options":[{"label":"駅前","description":"駅から徒歩 1 分の宿。"},{"label":"海沿い","description":"海が見える宿。駅からは遠い。"}],"multiSelect":false},{"question":"食事はどれを付ける？","header":"食事","options":[{"label":"朝食","description":"朝の食事。"},{"label":"夕食","description":"夜の食事。"}],"multiSelect":true}],"requestedAt":"2026-11-27T09:00:00Z","expiresAt":"2026-11-27T09:10:00Z"},"reason":"declined","comment":"宿は後で決めるので、先に経路だけ決めてくれ。"}
+                data: {"type":"question.rejected","question":{"id":"q-0001","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"questions":[{"question":"宿はどちらにする？","header":"宿","options":[{"label":"駅前","description":"駅から徒歩 1 分の宿。"},{"label":"海沿い","description":"海が見える宿。駅からは遠い。"}],"multiSelect":false},{"question":"食事はどれを付ける？","header":"食事","options":[{"label":"朝食","description":"朝の食事。"},{"label":"夕食","description":"夜の食事。"}],"multiSelect":true}],"requestedAt":"2026-11-27T09:00:00Z","expiresAt":"2026-11-27T09:10:00Z"},"reason":"declined","comment":"宿は後で決めるので、先に経路だけ決めてくれ。"}
 
     500:
       description: 処理失敗時。

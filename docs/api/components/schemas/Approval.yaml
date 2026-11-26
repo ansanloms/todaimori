@@ -3,7 +3,7 @@ description:
   $ref: "./descriptions/Approval.md"
 required:
   - id
-  - conversationId
+  - conversation
   - toolName
   - input
   - requestedAt
@@ -13,12 +13,9 @@ properties:
     type: string
     minLength: 1
     description: 承認の ID。server が発行する不透明な文字列である。
-  conversationId:
-    type: string
-    minLength: 1
-    maxLength: 128
-    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
-    description: 承認を求めている会話の ID。
+  conversation:
+    $ref: ./Conversation.yaml
+    description: 承認を求めている会話。
   toolName:
     type: string
     minLength: 1

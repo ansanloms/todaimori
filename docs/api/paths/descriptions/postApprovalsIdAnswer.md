@@ -2,7 +2,7 @@
 
 `comment` は拒否の理由で、`deny` のときだけ付けられる。付けると理由として AI に渡り、AI は作業を続ける。付けなければ、その実行を終える。待っている入力は捨てず、続けて動く。ここが `POST /conversations/{id}/stop` と違う。`allow` や `allowAlways` に `comment` を付けると、400 を返す。
 
-答えはどの client からでも送れる。先に届いた答えで確定する。確定すると承認は消え、許可なら `approval.resolved`、拒否なら理由 `denied` の `approval.rejected` が流れる。`comment` を付けていれば `approval.rejected` にも載る。後から届いた答えには、承認が既に無いので 404 を返す。期限が過ぎた承認と打ち切られた承認も消えているので、404 を返す。
+答えはどの client からでも送れる。先に届いた答えで確定する。確定すると承認は消え、許可なら `approval.resolved`、`deny` なら理由 `declined` の `approval.rejected` が流れる。`comment` を付けていれば `approval.rejected` にも載る。後から届いた答えには、承認が既に無いので 404 を返す。期限が過ぎた承認と打ち切られた承認も消えているので、404 を返す。
 
 期限が過ぎた承認は、理由の無い拒否と同じく実行を終える。理由 `expired` の `approval.rejected` が流れる。
 

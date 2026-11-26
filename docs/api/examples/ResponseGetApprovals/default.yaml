@@ -1,5 +1,9 @@
 - id: a-0001
-  conversationId: c-0001
+  conversation:
+    id: c-0001
+    settings:
+      model: opus
+      effort: high
   toolName: Bash
   input:
     command: npm run build
@@ -9,7 +13,11 @@
   requestedAt: "2026-11-26T09:00:00Z"
   expiresAt: "2026-11-26T09:10:00Z"
 - id: a-0002
-  conversationId: c-0001
+  conversation:
+    id: c-0001
+    settings:
+      model: opus
+      effort: high
   toolName: Bash
   input:
     command: rm -rf ./dist

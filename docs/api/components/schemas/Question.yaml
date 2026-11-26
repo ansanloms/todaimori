@@ -3,7 +3,7 @@ description:
   $ref: "./descriptions/Question.md"
 required:
   - id
-  - conversationId
+  - conversation
   - questions
   - requestedAt
   - expiresAt
@@ -12,12 +12,9 @@ properties:
     type: string
     minLength: 1
     description: 質問の ID。server が発行する不透明な文字列である。
-  conversationId:
-    type: string
-    minLength: 1
-    maxLength: 128
-    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
-    description: 質問を投げている会話の ID。
+  conversation:
+    $ref: ./Conversation.yaml
+    description: 質問を投げている会話。
   questions:
     type: array
     minItems: 1

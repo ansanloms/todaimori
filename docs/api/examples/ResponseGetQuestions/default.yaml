@@ -1,5 +1,9 @@
 - id: q-0001
-  conversationId: c-0001
+  conversation:
+    id: c-0001
+    settings:
+      model: opus
+      effort: high
   questions:
     - question: 宿はどちらにする？
       header: 宿

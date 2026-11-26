@@ -17,4 +17,4 @@ properties:
   comment:
     type: string
     minLength: 1
-    description: 拒否で付けられた理由。`reason` が `denied` で、答えに `comment` が付いていたときだけ持つ。
+    description: 拒否で付けられた理由。`reason` が `declined` で、答えに `comment` が付いていたときだけ持つ。
