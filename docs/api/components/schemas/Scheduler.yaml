@@ -1,0 +1,35 @@
+type: object
+description:
+  $ref: "./descriptions/Scheduler.md"
+required:
+  - id
+  - type
+  - input
+  - schedule
+  - once
+properties:
+  id:
+    type: string
+    minLength: 1
+    maxLength: 128
+    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
+    description: "定期実行の ID。client が決める。英数字で始まり、英数字と `.` `_` `:` `-` を使える。大文字と小文字を区別し、正規化しない。"
+  type:
+    $ref: ./EnumSchedulerType.yaml
+  input:
+    type: string
+    minLength: 1
+    pattern: \S
+    description: 動かす内容。type が command ならコマンド行、それ以外は AI へ送る本文である。空白だけの文字列は受け付けない。
+  schedule:
+    type: string
+    description: 動かす時刻。cron の書式 (分・時・日・月・曜日の 5 欄) で書く。時刻は server の時間帯で解釈する。
+  once:
+    type: boolean
+    description: true なら、1 回実行を始めた時点で定義を消す。
+  conversationId:
+    type: string
+    minLength: 1
+    maxLength: 128
+    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
+    description: 届け先の会話の ID。type が conversation.input のときは必須で、それ以外では書けない。

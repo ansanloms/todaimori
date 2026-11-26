@@ -11,8 +11,7 @@ properties:
     minLength: 1
     maxLength: 128
     pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
-    description:
-      $ref: "../parameters/descriptions/ConversationId.md"
+    description: "会話の ID。client が決める。server は中身を解釈しない。英数字で始まり、英数字と `.` `_` `:` `-` を使える。大文字と小文字を区別し、正規化しない。"
   status:
     $ref: ./EnumConversationStatus.yaml
   settings:

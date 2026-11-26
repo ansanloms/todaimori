@@ -1,0 +1,16 @@
+- id: memory-cleanup
+  type: command
+  input: ./bin/cleanup-memory.sh
+  schedule: "0 4 * * *"
+  once: false
+- id: memory-digest
+  type: prompt
+  input: 昨日の記録を読み、memory を整理してほしい。
+  schedule: "30 4 * * *"
+  once: false
+- id: morning-brief
+  type: conversation.input
+  input: 今日の予定を教えてほしい。
+  schedule: "0 8 * * *"
+  once: false
+  conversationId: c-0001

@@ -1,0 +1,5 @@
+type: conversation.input
+input: 今日の予定を教えてほしい。
+schedule: "0 8 * * *"
+once: false
+conversationId: c-0001

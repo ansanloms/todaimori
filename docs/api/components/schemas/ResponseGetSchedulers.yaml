@@ -1,0 +1,5 @@
+description:
+  $ref: "./descriptions/ResponseGetSchedulers.md"
+type: array
+items:
+  $ref: ./Scheduler.yaml
