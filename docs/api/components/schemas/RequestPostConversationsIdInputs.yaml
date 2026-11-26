@@ -1,5 +1,6 @@
 type: object
-description: 会話へ送る入力。
+description:
+  $ref: "./descriptions/RequestPostConversationsIdInputs.md"
 additionalProperties: false
 required:
   - text

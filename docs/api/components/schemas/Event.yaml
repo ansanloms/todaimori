@@ -1,45 +1,6 @@
-description: イベント。type の値で中身が決まる。どのイベントも conversation を持つ。イベントは追加のみで増える。client は未知の type を受け取っても検証エラーにせず無視する。この oneOf は現時点で定義済みのイベントの一覧である。
+description:
+  $ref: "./descriptions/Event.md"
 oneOf:
-  - type: object
-    description: 会話が変わった。
-    required:
-      - type
-      - conversation
-    properties:
-      type:
-        type: string
-        const: conversation.updated
-        description: イベントの種別。
-      conversation:
-        $ref: ./Conversation.yaml
-  - type: object
-    description: Message ができた。
-    required:
-      - type
-      - conversation
-      - message
-    properties:
-      type:
-        type: string
-        const: message.created
-        description: イベントの種別。
-      conversation:
-        $ref: ./Conversation.yaml
-      message:
-        $ref: ./Message.yaml
-  - type: object
-    description: 実行が失敗した。
-    required:
-      - type
-      - conversation
-      - detail
-    properties:
-      type:
-        type: string
-        const: error
-        description: イベントの種別。
-      conversation:
-        $ref: ./Conversation.yaml
-      detail:
-        type: string
-        description: 失敗の理由。
+  - $ref: ./EventConversationUpdated.yaml
+  - $ref: ./EventMessageCreated.yaml
+  - $ref: ./EventError.yaml

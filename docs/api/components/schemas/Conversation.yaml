@@ -1,5 +1,6 @@
 type: object
-description: 会話。文脈が続く範囲である。
+description:
+  $ref: "./descriptions/Conversation.md"
 required:
   - id
   - status

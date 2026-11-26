@@ -1,5 +1,6 @@
 type: object
-description: RFC 9457 Problem Details for HTTP APIs
+description:
+  $ref: "./descriptions/ResponseError.md"
 required:
   - type
   - title

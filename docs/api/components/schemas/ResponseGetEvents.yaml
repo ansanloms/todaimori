@@ -1,5 +1,6 @@
 type: object
-description: SSE の 1 イベント。種別は data の中の type で表す。
+description:
+  $ref: "./descriptions/ResponseGetEvents.md"
 required:
   - data
 properties:

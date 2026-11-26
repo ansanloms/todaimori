@@ -22,6 +22,12 @@ components:
       $ref: ./components/schemas/Conversation.yaml
     Event:
       $ref: ./components/schemas/Event.yaml
+    EventConversationUpdated:
+      $ref: ./components/schemas/EventConversationUpdated.yaml
+    EventError:
+      $ref: ./components/schemas/EventError.yaml
+    EventMessageCreated:
+      $ref: ./components/schemas/EventMessageCreated.yaml
     Message:
       $ref: ./components/schemas/Message.yaml
     EnumConversationStatus:

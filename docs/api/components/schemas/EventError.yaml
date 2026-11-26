@@ -1,0 +1,17 @@
+type: object
+description:
+  $ref: "./descriptions/EventError.md"
+required:
+  - type
+  - conversation
+  - detail
+properties:
+  type:
+    type: string
+    const: error
+    description: イベントの種別。
+  conversation:
+    $ref: ./Conversation.yaml
+  detail:
+    type: string
+    description: 失敗の理由。

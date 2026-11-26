@@ -1,3 +1,4 @@
-description: 作成した会話。
+description:
+  $ref: "./descriptions/ResponsePostConversations.md"
 allOf:
   - $ref: ./Conversation.yaml
