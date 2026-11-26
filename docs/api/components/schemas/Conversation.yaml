@@ -2,7 +2,10 @@ type: object
 description: 会話。文脈が続く範囲である。
 required:
   - id
+  - status
 properties:
   id:
     type: string
     description: 会話の ID。server が発行する不透明な文字列である。
+  status:
+    $ref: ./EnumConversationStatus.yaml

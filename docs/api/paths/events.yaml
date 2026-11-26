@@ -15,28 +15,23 @@ get:
           examples:
             conversationBusy:
               serializedValue: |+
-                event: conversation.status
-                data: {"conversationId":"c-0001","status":"busy"}
+                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"busy"}}
 
             turnStarted:
               serializedValue: |+
-                event: turn.started
-                data: {"conversationId":"c-0001","turnId":"t-0001"}
+                data: {"type":"turn.started","conversation":{"id":"c-0001","status":"busy"},"turn":{"id":"t-0001","status":"running"}}
 
-            reply:
+            messageCreated:
               serializedValue: |+
-                event: reply
-                data: {"conversationId":"c-0001","turnId":"t-0001","blockId":"b-0001","text":"宿まであと 40 km だ。"}
+                data: {"type":"message.created","conversation":{"id":"c-0001","status":"busy"},"turn":{"id":"t-0001","status":"running"},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}
 
             turnEnded:
               serializedValue: |+
-                event: turn.ended
-                data: {"conversationId":"c-0001","turnId":"t-0001","result":"completed"}
+                data: {"type":"turn.ended","conversation":{"id":"c-0001","status":"busy"},"turn":{"id":"t-0001","status":"completed"}}
 
             conversationIdle:
               serializedValue: |+
-                event: conversation.status
-                data: {"conversationId":"c-0001","status":"idle"}
+                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle"}}
 
     500:
       description: 処理失敗時。

@@ -20,18 +20,16 @@ components:
   schemas:
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
-    EventConversationStatusData:
-      $ref: ./components/schemas/EventConversationStatusData.yaml
-    EventReplyData:
-      $ref: ./components/schemas/EventReplyData.yaml
-    EventTurnEndedData:
-      $ref: ./components/schemas/EventTurnEndedData.yaml
-    EventTurnStartedData:
-      $ref: ./components/schemas/EventTurnStartedData.yaml
+    Event:
+      $ref: ./components/schemas/Event.yaml
+    Message:
+      $ref: ./components/schemas/Message.yaml
+    Turn:
+      $ref: ./components/schemas/Turn.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
-    EnumTurnResult:
-      $ref: ./components/schemas/EnumTurnResult.yaml
+    EnumTurnStatus:
+      $ref: ./components/schemas/EnumTurnStatus.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
     ResponseError:

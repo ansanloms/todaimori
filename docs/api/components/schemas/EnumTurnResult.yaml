@@ -1,6 +1,0 @@
-type: string
-description: Turn の結果。値は後から増えうる。
-enum:
-  - completed
-  - failed
-  - cancelled

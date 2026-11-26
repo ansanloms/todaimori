@@ -1,0 +1,7 @@
+type: string
+description: Turn の状態。値は後から増えうる。
+enum:
+  - running
+  - completed
+  - failed
+  - cancelled
