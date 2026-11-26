@@ -42,6 +42,12 @@ components:
       $ref: ./components/parameters/QuestionId.yaml
     SchedulerId:
       $ref: ./components/parameters/SchedulerId.yaml
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description:
+        $ref: ./components/securitySchemes/descriptions/bearerAuth.md
   schemas:
     Approval:
       $ref: ./components/schemas/Approval.yaml
@@ -123,7 +129,8 @@ components:
       $ref: ./components/schemas/ResponsePutConversationsIdSettings.yaml
     ResponsePutSchedulersId:
       $ref: ./components/schemas/ResponsePutSchedulersId.yaml
-security: []
+security:
+  - bearerAuth: []
 tags:
   - name: approvals
     description: 承認の取得と答えの送信。

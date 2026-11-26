@@ -33,6 +33,16 @@ post:
             invalidId:
               value:
                 $ref: ../examples/ResponseFailure/invalidId.yaml
+    401:
+      description: Authorization ヘッダが無い場合と、Bearer 以外の方式の場合と、token が不正または失効している場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            unauthorized:
+              value:
+                $ref: ../examples/ResponseFailure/unauthorized.yaml
     404:
       description: 会話が存在しない場合。
       content:
@@ -43,6 +53,16 @@ post:
             conversationNotFound:
               value:
                 $ref: ../examples/ResponseFailure/conversationNotFound.yaml
+    429:
+      description: agent が送る入力がサーバの上限を超えた場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            inputRateLimited:
+              value:
+                $ref: ../examples/ResponseFailure/inputRateLimited.yaml
     500:
       description: 処理失敗時。
       content:

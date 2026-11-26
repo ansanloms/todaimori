@@ -1,0 +1,4 @@
+type: about:blank
+title: Too Many Requests
+status: 429
+detail: agent が送る入力がサーバの上限を超えた。

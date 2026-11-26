@@ -1,0 +1,4 @@
+type: about:blank
+title: Unauthorized
+status: 401
+detail: Authorization ヘッダが無いか、token が不正または失効している。

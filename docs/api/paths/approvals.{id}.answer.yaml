@@ -2,6 +2,9 @@ parameters:
   - $ref: ../components/parameters/ApprovalId.yaml
 post:
   operationId: postApprovalsIdAnswer
+  security:
+    - bearerAuth:
+        - user
   summary: 承認への答え。
   tags:
     - approvals
@@ -45,6 +48,26 @@ post:
             approvalCommentNotAllowed:
               value:
                 $ref: ../examples/ResponseFailure/approvalCommentNotAllowed.yaml
+    401:
+      description: Authorization ヘッダが無い場合と、Bearer 以外の方式の場合と、token が不正または失効している場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            unauthorized:
+              value:
+                $ref: ../examples/ResponseFailure/unauthorized.yaml
+    403:
+      description: この操作を呼べない role の token で呼んだ場合。`user` の token が要る。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            forbidden:
+              value:
+                $ref: ../examples/ResponseFailure/forbidden.yaml
     404:
       description: 承認が存在しない場合。答えが出た承認、期限が過ぎた承認、打ち切られた承認も含む。
       content:

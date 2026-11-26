@@ -38,6 +38,16 @@ put:
             invalidId:
               value:
                 $ref: ../examples/ResponseFailure/invalidId.yaml
+    401:
+      description: Authorization ヘッダが無い場合と、Bearer 以外の方式の場合と、token が不正または失効している場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            unauthorized:
+              value:
+                $ref: ../examples/ResponseFailure/unauthorized.yaml
     500:
       description: 処理失敗時。
       content:
@@ -68,6 +78,16 @@ delete:
             invalidId:
               value:
                 $ref: ../examples/ResponseFailure/invalidId.yaml
+    401:
+      description: Authorization ヘッダが無い場合と、Bearer 以外の方式の場合と、token が不正または失効している場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            unauthorized:
+              value:
+                $ref: ../examples/ResponseFailure/unauthorized.yaml
     404:
       description: 会話が存在しない場合。
       content:

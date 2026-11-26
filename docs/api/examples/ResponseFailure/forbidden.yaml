@@ -1,0 +1,4 @@
+type: about:blank
+title: Forbidden
+status: 403
+detail: この操作を呼べない role の token である。

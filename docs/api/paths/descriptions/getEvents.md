@@ -13,3 +13,5 @@ AI の応答は、まとまり 1 件ごとに `message.created` で届く。断�
 切断中のイベントは再送しない。接続した直後に、その時点の状態を流す。実行中の会話には `conversation.running`、承認や質問を待つ会話には `conversation.waiting`、待っている承認には `approval.requested`、待っている質問には `question.requested` を流す。流れなかった会話は idle とみなす。
 
 イベントは追加のみで増える。client は未知の `type` を無視する。
+
+認証は他の操作と同じく Authorization ヘッダだけで行う。token を query や cookie で渡す経路は無い。

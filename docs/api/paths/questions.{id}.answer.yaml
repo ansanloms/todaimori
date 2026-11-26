@@ -2,6 +2,9 @@ parameters:
   - $ref: ../components/parameters/QuestionId.yaml
 post:
   operationId: postQuestionsIdAnswer
+  security:
+    - bearerAuth:
+        - user
   summary: 質問への答え。
   tags:
     - questions
@@ -42,6 +45,26 @@ post:
             questionInvalidAnswer:
               value:
                 $ref: ../examples/ResponseFailure/questionInvalidAnswer.yaml
+    401:
+      description: Authorization ヘッダが無い場合と、Bearer 以外の方式の場合と、token が不正または失効している場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            unauthorized:
+              value:
+                $ref: ../examples/ResponseFailure/unauthorized.yaml
+    403:
+      description: この操作を呼べない role の token で呼んだ場合。`user` の token が要る。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            forbidden:
+              value:
+                $ref: ../examples/ResponseFailure/forbidden.yaml
     404:
       description: 質問が存在しない場合。答えが出た質問、期限が過ぎた質問、打ち切られた質問も含む。
       content:
