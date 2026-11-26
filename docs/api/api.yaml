@@ -22,6 +22,10 @@ paths:
     $ref: ./paths/conversations.{id}.stop.yaml
   /events:
     $ref: ./paths/events.yaml
+  /questions:
+    $ref: ./paths/questions.yaml
+  /questions/{id}/answer:
+    $ref: ./paths/questions.{id}.answer.yaml
   /schedulers:
     $ref: ./paths/schedulers.yaml
   /schedulers/{id}:
@@ -34,6 +38,8 @@ components:
       $ref: ./components/parameters/ApprovalId.yaml
     ConversationId:
       $ref: ./components/parameters/ConversationId.yaml
+    QuestionId:
+      $ref: ./components/parameters/QuestionId.yaml
     SchedulerId:
       $ref: ./components/parameters/SchedulerId.yaml
   schemas:
@@ -47,6 +53,10 @@ components:
       $ref: ./components/schemas/Failure.yaml
     Message:
       $ref: ./components/schemas/Message.yaml
+    Question:
+      $ref: ./components/schemas/Question.yaml
+    QuestionAnswer:
+      $ref: ./components/schemas/QuestionAnswer.yaml
     Scheduler:
       $ref: ./components/schemas/Scheduler.yaml
     ServerEvent:
@@ -69,16 +79,28 @@ components:
       $ref: ./components/schemas/ServerEventFailure.yaml
     ServerEventMessageCreated:
       $ref: ./components/schemas/ServerEventMessageCreated.yaml
+    ServerEventQuestionRejected:
+      $ref: ./components/schemas/ServerEventQuestionRejected.yaml
+    ServerEventQuestionRequested:
+      $ref: ./components/schemas/ServerEventQuestionRequested.yaml
+    ServerEventQuestionResolved:
+      $ref: ./components/schemas/ServerEventQuestionResolved.yaml
     EnumApprovalAnswer:
       $ref: ./components/schemas/EnumApprovalAnswer.yaml
     EnumApprovalRejectReason:
       $ref: ./components/schemas/EnumApprovalRejectReason.yaml
+    EnumQuestionAnswer:
+      $ref: ./components/schemas/EnumQuestionAnswer.yaml
+    EnumQuestionRejectReason:
+      $ref: ./components/schemas/EnumQuestionRejectReason.yaml
     EnumSchedulerType:
       $ref: ./components/schemas/EnumSchedulerType.yaml
     RequestPostApprovalsIdAnswer:
       $ref: ./components/schemas/RequestPostApprovalsIdAnswer.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
+    RequestPostQuestionsIdAnswer:
+      $ref: ./components/schemas/RequestPostQuestionsIdAnswer.yaml
     RequestPutConversationsIdSettings:
       $ref: ./components/schemas/RequestPutConversationsIdSettings.yaml
     RequestPutSchedulersId:
@@ -89,6 +111,8 @@ components:
       $ref: ./components/schemas/ResponseGetApprovals.yaml
     ResponseGetEvents:
       $ref: ./components/schemas/ResponseGetEvents.yaml
+    ResponseGetQuestions:
+      $ref: ./components/schemas/ResponseGetQuestions.yaml
     ResponseGetSchedulers:
       $ref: ./components/schemas/ResponseGetSchedulers.yaml
     ResponseGetSchedulersId:
@@ -107,5 +131,7 @@ tags:
     description: 会話の入力・設定・停止・削除。
   - name: events
     description: 全会話のイベントの購読。
+  - name: questions
+    description: 質問の取得と答えの送信。
   - name: schedulers
     description: 定期実行の登録・取得・実行・削除。

@@ -1,0 +1,20 @@
+type: object
+description:
+  $ref: "./descriptions/ServerEventQuestionRejected.md"
+required:
+  - type
+  - question
+  - reason
+properties:
+  type:
+    type: string
+    const: question.rejected
+    description: イベントの種別。
+  question:
+    $ref: ./Question.yaml
+  reason:
+    $ref: ./EnumQuestionRejectReason.yaml
+  comment:
+    type: string
+    minLength: 1
+    description: 断るときに付けられた理由。`reason` が `declined` で、答えに `comment` が付いていたときだけ持つ。

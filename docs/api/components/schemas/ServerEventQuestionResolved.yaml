@@ -1,0 +1,21 @@
+type: object
+description:
+  $ref: "./descriptions/ServerEventQuestionResolved.md"
+required:
+  - type
+  - question
+  - answers
+properties:
+  type:
+    type: string
+    const: question.resolved
+    description: イベントの種別。
+  question:
+    $ref: ./Question.yaml
+  answers:
+    type: array
+    minItems: 1
+    maxItems: 4
+    items:
+      $ref: ./QuestionAnswer.yaml
+    description: 確定した答え。`question` の `questions` と同じ順序・同じ個数である。

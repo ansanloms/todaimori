@@ -1,0 +1,19 @@
+type: object
+description:
+  $ref: "./descriptions/QuestionAnswer.md"
+additionalProperties: false
+minProperties: 1
+properties:
+  labels:
+    type: array
+    minItems: 1
+    uniqueItems: true
+    items:
+      type: string
+      minLength: 1
+    description: 選んだ選択肢の `label`。
+  text:
+    type: string
+    minLength: 1
+    pattern: \S
+    description: 自由入力の答え。

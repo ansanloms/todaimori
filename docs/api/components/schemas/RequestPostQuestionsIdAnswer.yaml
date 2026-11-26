@@ -1,0 +1,21 @@
+type: object
+description:
+  $ref: "./descriptions/RequestPostQuestionsIdAnswer.md"
+additionalProperties: false
+required:
+  - answer
+properties:
+  answer:
+    $ref: ./EnumQuestionAnswer.yaml
+  answers:
+    type: array
+    minItems: 1
+    maxItems: 4
+    items:
+      $ref: ./QuestionAnswer.yaml
+    description: 質問の `questions` と同じ順序・同じ個数の答え。`answer` が `reply` のときは必須で、`decline` のときは付けられない。
+  comment:
+    type: string
+    minLength: 1
+    pattern: \S
+    description: 断る理由。AI に渡る。`answer` が `decline` のときだけ付けられる。

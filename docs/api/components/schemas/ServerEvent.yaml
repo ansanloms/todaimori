@@ -10,3 +10,6 @@ oneOf:
   - $ref: ./ServerEventApprovalRequested.yaml
   - $ref: ./ServerEventApprovalResolved.yaml
   - $ref: ./ServerEventApprovalRejected.yaml
+  - $ref: ./ServerEventQuestionRequested.yaml
+  - $ref: ./ServerEventQuestionResolved.yaml
+  - $ref: ./ServerEventQuestionRejected.yaml

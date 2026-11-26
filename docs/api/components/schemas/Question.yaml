@@ -1,0 +1,70 @@
+type: object
+description:
+  $ref: "./descriptions/Question.md"
+required:
+  - id
+  - conversation
+  - questions
+  - requestedAt
+  - expiresAt
+properties:
+  id:
+    type: string
+    minLength: 1
+    description: 質問の ID。server が発行する不透明な文字列である。
+  conversation:
+    $ref: ./Conversation.yaml
+    description: 質問を投げている会話。
+  questions:
+    type: array
+    minItems: 1
+    maxItems: 4
+    description: 利用者に聞く個々の質問。どの質問にも自由入力の答えを必ず受け付けるので、`options` に「その他」の選択肢は含めない。自由入力の欄は client が自分で用意する。
+    items:
+      type: object
+      description: 利用者に聞く 1 つの質問。
+      required:
+        - question
+        - header
+        - options
+        - multiSelect
+      properties:
+        question:
+          type: string
+          minLength: 1
+          description: 質問の文面。
+        header:
+          type: string
+          minLength: 1
+          maxLength: 12
+          description: 質問を表す短いラベル。
+        options:
+          type: array
+          minItems: 2
+          maxItems: 4
+          description: 選択肢。自由入力は必ず受け付けるので、「その他」の選択肢は含めない。
+          items:
+            type: object
+            description: 質問の選択肢。
+            required:
+              - label
+              - description
+            properties:
+              label:
+                type: string
+                minLength: 1
+                description: 選択肢の表示名。答えの `labels` にはこの値を入れる。
+              description:
+                type: string
+                description: 選択肢の説明。
+        multiSelect:
+          type: boolean
+          description: 複数の選択肢を選べるかどうか。`false` なら選択肢を 1 つだけ選ぶか、自由入力で答える。
+  requestedAt:
+    type: string
+    format: date-time
+    description: 質問した時刻。
+  expiresAt:
+    type: string
+    format: date-time
+    description: 質問の期限。

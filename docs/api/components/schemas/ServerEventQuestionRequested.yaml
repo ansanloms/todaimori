@@ -1,0 +1,13 @@
+type: object
+description:
+  $ref: "./descriptions/ServerEventQuestionRequested.md"
+required:
+  - type
+  - question
+properties:
+  type:
+    type: string
+    const: question.requested
+    description: イベントの種別。
+  question:
+    $ref: ./Question.yaml

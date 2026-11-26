@@ -1,0 +1,6 @@
+type: string
+description:
+  $ref: "./descriptions/EnumQuestionAnswer.md"
+enum:
+  - reply
+  - decline

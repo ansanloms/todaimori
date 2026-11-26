@@ -1,0 +1,5 @@
+description:
+  $ref: "./descriptions/ResponseGetQuestions.md"
+type: array
+items:
+  $ref: ./Question.yaml

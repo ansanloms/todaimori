@@ -1,0 +1,64 @@
+parameters:
+  - $ref: ../components/parameters/QuestionId.yaml
+post:
+  operationId: postQuestionsIdAnswer
+  summary: 質問への答え。
+  tags:
+    - questions
+  description:
+    $ref: ./descriptions/postQuestionsIdAnswer.md
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RequestPostQuestionsIdAnswer.yaml
+        examples:
+          reply:
+            value:
+              $ref: ../examples/RequestPostQuestionsIdAnswer/reply.yaml
+          replyMultiSelect:
+            value:
+              $ref: ../examples/RequestPostQuestionsIdAnswer/replyMultiSelect.yaml
+          replyText:
+            value:
+              $ref: ../examples/RequestPostQuestionsIdAnswer/replyText.yaml
+          decline:
+            value:
+              $ref: ../examples/RequestPostQuestionsIdAnswer/decline.yaml
+          declineWithComment:
+            value:
+              $ref: ../examples/RequestPostQuestionsIdAnswer/declineWithComment.yaml
+  responses:
+    204:
+      description: 答えを受け付けた場合。
+    400:
+      description: body が不正な場合。`reply` に `answers` が無い場合。`answers` の個数が `questions` と違う場合。その質問の `options` に無い `label` を選んだ場合。`multiSelect` が `false` の質問に 2 つ以上の `labels` を選んだ場合や `labels` と `text` の両方を付けた場合。`decline` に `answers` を付けた場合。`reply` に `comment` を付けた場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            questionInvalidAnswer:
+              value:
+                $ref: ../examples/ResponseFailure/questionInvalidAnswer.yaml
+    404:
+      description: 質問が存在しない場合。答えが出た質問、期限が過ぎた質問、打ち切られた質問も含む。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            questionNotFound:
+              value:
+                $ref: ../examples/ResponseFailure/questionNotFound.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml
