@@ -1,0 +1,28 @@
+get:
+  operationId: getSchedulers
+  summary: 定期実行の一覧。
+  tags:
+    - schedulers
+  description:
+    $ref: ./descriptions/getSchedulers.md
+  responses:
+    200:
+      description: 処理成功時。
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ResponseGetSchedulers.yaml
+          examples:
+            default:
+              value:
+                $ref: ../examples/ResponseGetSchedulers/default.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml

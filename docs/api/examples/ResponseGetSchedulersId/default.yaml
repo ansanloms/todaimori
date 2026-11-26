@@ -1,0 +1,5 @@
+id: memory-cleanup
+type: command
+input: ./bin/cleanup-memory.sh
+schedule: "0 4 * * *"
+once: false

@@ -1,0 +1,3 @@
+type: command
+input: ./bin/cleanup-memory.sh
+schedule: "0 4 * * *"

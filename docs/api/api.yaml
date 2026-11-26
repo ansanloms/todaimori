@@ -16,10 +16,18 @@ paths:
     $ref: ./paths/conversations.{id}.stop.yaml
   /events:
     $ref: ./paths/events.yaml
+  /schedulers:
+    $ref: ./paths/schedulers.yaml
+  /schedulers/{id}:
+    $ref: ./paths/schedulers.{id}.yaml
+  /schedulers/{id}/run:
+    $ref: ./paths/schedulers.{id}.run.yaml
 components:
   parameters:
     ConversationId:
       $ref: ./components/parameters/ConversationId.yaml
+    SchedulerId:
+      $ref: ./components/parameters/SchedulerId.yaml
   schemas:
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
@@ -33,16 +41,28 @@ components:
       $ref: ./components/schemas/Failure.yaml
     Message:
       $ref: ./components/schemas/Message.yaml
+    Scheduler:
+      $ref: ./components/schemas/Scheduler.yaml
     ServerEvent:
       $ref: ./components/schemas/ServerEvent.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
+    EnumSchedulerType:
+      $ref: ./components/schemas/EnumSchedulerType.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
+    RequestPutSchedulersId:
+      $ref: ./components/schemas/RequestPutSchedulersId.yaml
     ResponseFailure:
       $ref: ./components/schemas/ResponseFailure.yaml
     ResponseGetEvents:
       $ref: ./components/schemas/ResponseGetEvents.yaml
+    ResponseGetSchedulers:
+      $ref: ./components/schemas/ResponseGetSchedulers.yaml
+    ResponseGetSchedulersId:
+      $ref: ./components/schemas/ResponseGetSchedulersId.yaml
     ResponsePutConversationsId:
       $ref: ./components/schemas/ResponsePutConversationsId.yaml
+    ResponsePutSchedulersId:
+      $ref: ./components/schemas/ResponsePutSchedulersId.yaml
 security: []
