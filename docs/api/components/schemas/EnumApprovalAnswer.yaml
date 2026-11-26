@@ -1,0 +1,7 @@
+type: string
+description:
+  $ref: "./descriptions/EnumApprovalAnswer.md"
+enum:
+  - allow
+  - allowAlways
+  - deny

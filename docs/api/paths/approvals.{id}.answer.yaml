@@ -1,0 +1,71 @@
+parameters:
+  - $ref: ../components/parameters/ApprovalId.yaml
+post:
+  operationId: postApprovalsIdAnswer
+  summary: 承認への答え。
+  tags:
+    - approvals
+  description:
+    $ref: ./descriptions/postApprovalsIdAnswer.md
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RequestPostApprovalsIdAnswer.yaml
+        examples:
+          allow:
+            value:
+              $ref: ../examples/RequestPostApprovalsIdAnswer/allow.yaml
+          allowAlways:
+            value:
+              $ref: ../examples/RequestPostApprovalsIdAnswer/allowAlways.yaml
+          deny:
+            value:
+              $ref: ../examples/RequestPostApprovalsIdAnswer/deny.yaml
+  responses:
+    204:
+      description: 答えを受け付けた場合。
+    400:
+      description: body が不正な場合と、`rules` を持たない承認に `allowAlways` で答えた場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            invalidAnswer:
+              value:
+                $ref: ../examples/ResponseFailure/approvalInvalidAnswer.yaml
+            rulesMissing:
+              value:
+                $ref: ../examples/ResponseFailure/approvalRulesMissing.yaml
+    404:
+      description: 承認が存在しない場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            notFound:
+              value:
+                $ref: ../examples/ResponseFailure/approvalNotFound.yaml
+    409:
+      description: 承認が既に解決している場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            resolved:
+              value:
+                $ref: ../examples/ResponseFailure/approvalResolved.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml

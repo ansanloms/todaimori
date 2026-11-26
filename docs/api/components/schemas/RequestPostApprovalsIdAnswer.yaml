@@ -1,0 +1,9 @@
+type: object
+description:
+  $ref: "./descriptions/RequestPostApprovalsIdAnswer.md"
+additionalProperties: false
+required:
+  - answer
+properties:
+  answer:
+    $ref: ./EnumApprovalAnswer.yaml

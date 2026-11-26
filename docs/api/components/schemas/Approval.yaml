@@ -1,0 +1,49 @@
+type: object
+description:
+  $ref: "./descriptions/Approval.md"
+required:
+  - id
+  - conversationId
+  - toolName
+  - input
+  - status
+  - requestedAt
+  - expiresAt
+properties:
+  id:
+    type: string
+    minLength: 1
+    description: 承認の ID。server が発行する不透明な文字列である。
+  conversationId:
+    type: string
+    minLength: 1
+    maxLength: 128
+    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
+    description: 承認を求めている会話の ID。
+  toolName:
+    type: string
+    minLength: 1
+    description: ツールの名前。
+  input:
+    type: object
+    description: ツールへの入力。中身はツールごとに違うので定めない。
+  description:
+    type: string
+    description: 承認の説明。
+  rules:
+    type: array
+    minItems: 1
+    items:
+      type: string
+      minLength: 1
+    description: 「今後は聞かない」で答えたときに覚える規則の表示用の文字列。例は `Bash(npm run *)` である。この項目が無い承認には「今後は聞かない」で答えられない。client は中身を解釈せず、表示だけに使う。
+  status:
+    $ref: ./EnumApprovalStatus.yaml
+  requestedAt:
+    type: string
+    format: date-time
+    description: 承認を求めた時刻。
+  expiresAt:
+    type: string
+    format: date-time
+    description: 承認の期限。

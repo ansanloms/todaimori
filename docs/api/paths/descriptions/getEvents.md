@@ -1,10 +1,10 @@
-全会話のイベントが 1 本に流れる。現時点のイベントはどれも `conversation` を持つが、会話に属さないイベントを後から足すことがある。client は `type` を確かめてから中身を読む。承認や質問を将来足す場合も、要求の通知はここに流し、回答と取り直しは別の path で受ける。
+全会話のイベントが 1 本に流れる。会話のイベントは `conversation` を持つ。承認のイベント (`approval.requested`・`approval.resolved`) は `conversation` ではなく `approval` を持つ。client は `type` を確かめてから中身を読む。承認の要求と解決はここに流れる。答えは `POST /approvals/{id}/answer` で送り、取り直しは `GET /approvals` で行う。質問を将来足す場合も、同じ形にする。
 
 イベントの種別は data の `type` で表す。SSE の `event` フィールドは使わない。
 
-会話が実行中かどうかは `conversation` の `status` で分かる。`running` は実行している状態、`idle` は実行していない状態である。待っている入力があるかどうかは含まない。状態が変わると `conversation.updated` が流れる。会話の設定が変わったときも流れる。
+会話が実行中かどうかは `conversation` の `status` で分かる。`running` は実行している状態、`idle` は実行していない状態、`waiting` は利用者の答えを待っている状態である。待っている入力があるかどうかは含まない。状態が変わると `conversation.updated` が流れる。会話の設定が変わったときも流れる。
 
-実行が終わるたびに `status` は `idle` になる。待っている入力があれば、続けて `running` に戻る。`idle` になった時点が応答の区切りである。
+承認を待つ間は `status` が `waiting` になり、答えが出ると `running` に戻る。実行が終わるたびに `status` は `idle` になる。待っている入力があれば、続けて `running` に戻る。`idle` になった時点が応答の区切りである。
 
 AI の応答は、まとまり 1 件ごとに `message.created` で届く。断片では届かない。
 

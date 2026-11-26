@@ -8,6 +8,10 @@ servers:
   - url: https://api.example.org
     description: Production Server
 paths:
+  /approvals:
+    $ref: ./paths/approvals.yaml
+  /approvals/{id}/answer:
+    $ref: ./paths/approvals.{id}.answer.yaml
   /conversations/{id}:
     $ref: ./paths/conversations.{id}.yaml
   /conversations/{id}/inputs:
@@ -26,13 +30,21 @@ paths:
     $ref: ./paths/schedulers.{id}.run.yaml
 components:
   parameters:
+    ApprovalId:
+      $ref: ./components/parameters/ApprovalId.yaml
     ConversationId:
       $ref: ./components/parameters/ConversationId.yaml
     SchedulerId:
       $ref: ./components/parameters/SchedulerId.yaml
   schemas:
+    Approval:
+      $ref: ./components/schemas/Approval.yaml
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
+    EventApprovalRequested:
+      $ref: ./components/schemas/EventApprovalRequested.yaml
+    EventApprovalResolved:
+      $ref: ./components/schemas/EventApprovalResolved.yaml
     EventConversationUpdated:
       $ref: ./components/schemas/EventConversationUpdated.yaml
     EventFailure:
@@ -49,10 +61,16 @@ components:
       $ref: ./components/schemas/Scheduler.yaml
     ServerEvent:
       $ref: ./components/schemas/ServerEvent.yaml
+    EnumApprovalAnswer:
+      $ref: ./components/schemas/EnumApprovalAnswer.yaml
+    EnumApprovalStatus:
+      $ref: ./components/schemas/EnumApprovalStatus.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
     EnumSchedulerType:
       $ref: ./components/schemas/EnumSchedulerType.yaml
+    RequestPostApprovalsIdAnswer:
+      $ref: ./components/schemas/RequestPostApprovalsIdAnswer.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
     RequestPutConversationsIdSettings:
@@ -61,6 +79,8 @@ components:
       $ref: ./components/schemas/RequestPutSchedulersId.yaml
     ResponseFailure:
       $ref: ./components/schemas/ResponseFailure.yaml
+    ResponseGetApprovals:
+      $ref: ./components/schemas/ResponseGetApprovals.yaml
     ResponseGetEvents:
       $ref: ./components/schemas/ResponseGetEvents.yaml
     ResponseGetSchedulers:

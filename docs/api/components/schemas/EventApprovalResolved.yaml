@@ -1,0 +1,13 @@
+type: object
+description:
+  $ref: "./descriptions/EventApprovalResolved.md"
+required:
+  - type
+  - approval
+properties:
+  type:
+    type: string
+    const: approval.resolved
+    description: イベントの種別。
+  approval:
+    $ref: ./Approval.yaml

@@ -1,0 +1,1 @@
+data: '{"type":"conversation.updated","conversation":{"id":"c-0001","status":"waiting","settings":{"model":"opus","effort":"high"}}}'

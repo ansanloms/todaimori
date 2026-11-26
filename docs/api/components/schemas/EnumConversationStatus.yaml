@@ -4,3 +4,4 @@ description:
 enum:
   - idle
   - running
+  - waiting
