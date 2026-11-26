@@ -1,0 +1,2 @@
+answer: deny
+comment: dist は消さずに、ビルドだけ実行してくれ。

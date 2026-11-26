@@ -4,3 +4,6 @@ oneOf:
   - $ref: ./EventConversationUpdated.yaml
   - $ref: ./EventMessageCreated.yaml
   - $ref: ./EventFailure.yaml
+  - $ref: ./EventApprovalRequested.yaml
+  - $ref: ./EventApprovalResolved.yaml
+  - $ref: ./EventApprovalRejected.yaml

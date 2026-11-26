@@ -1,0 +1,14 @@
+type: object
+description:
+  $ref: "./descriptions/RequestPostApprovalsIdAnswer.md"
+additionalProperties: false
+required:
+  - answer
+properties:
+  answer:
+    $ref: ./EnumApprovalAnswer.yaml
+  comment:
+    type: string
+    minLength: 1
+    pattern: \S
+    description: 拒否の理由。AI に渡る。`answer` が `deny` のときだけ付けられる。

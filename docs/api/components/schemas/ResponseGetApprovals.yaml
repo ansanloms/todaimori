@@ -1,0 +1,5 @@
+description:
+  $ref: "./descriptions/ResponseGetApprovals.md"
+type: array
+items:
+  $ref: ./Approval.yaml

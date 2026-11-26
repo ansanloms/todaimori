@@ -37,6 +37,30 @@ get:
               serializedValue: |+
                 data: {"type":"failure","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}},"failure":{"type":"about:blank","title":"Internal Server Error","status":500,"detail":"実行に失敗した。"}}
 
+            conversationWaiting:
+              dataValue:
+                $ref: ../examples/ResponseGetEvents/conversationWaiting.yaml
+              serializedValue: |+
+                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"waiting","settings":{"model":"opus","effort":"high"}}}
+
+            approvalRequested:
+              dataValue:
+                $ref: ../examples/ResponseGetEvents/approvalRequested.yaml
+              serializedValue: |+
+                data: {"type":"approval.requested","approval":{"id":"a-0001","conversationId":"c-0001","toolName":"Bash","input":{"command":"npm run build"},"description":"ビルドを実行する。","rules":["Bash(npm run *)"],"requestedAt":"2026-11-26T09:00:00Z","expiresAt":"2026-11-26T09:10:00Z"}}
+
+            approvalResolved:
+              dataValue:
+                $ref: ../examples/ResponseGetEvents/approvalResolved.yaml
+              serializedValue: |+
+                data: {"type":"approval.resolved","approval":{"id":"a-0001","conversationId":"c-0001","toolName":"Bash","input":{"command":"npm run build"},"description":"ビルドを実行する。","rules":["Bash(npm run *)"],"requestedAt":"2026-11-26T09:00:00Z","expiresAt":"2026-11-26T09:10:00Z"}}
+
+            approvalRejected:
+              dataValue:
+                $ref: ../examples/ResponseGetEvents/approvalRejected.yaml
+              serializedValue: |+
+                data: {"type":"approval.rejected","approval":{"id":"a-0002","conversationId":"c-0001","toolName":"Bash","input":{"command":"rm -rf ./dist"},"requestedAt":"2026-11-26T09:01:00Z","expiresAt":"2026-11-26T09:11:00Z"},"reason":"denied","comment":"dist は消さずに、ビルドだけ実行してくれ。"}
+
     500:
       description: 処理失敗時。
       content:

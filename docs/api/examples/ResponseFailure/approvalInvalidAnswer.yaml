@@ -1,0 +1,4 @@
+type: about:blank
+title: Bad Request
+status: 400
+detail: answer は allow・allowAlways・deny のいずれかで指定する。

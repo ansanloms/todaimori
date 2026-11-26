@@ -1,0 +1,20 @@
+type: object
+description:
+  $ref: "./descriptions/EventApprovalRejected.md"
+required:
+  - type
+  - approval
+  - reason
+properties:
+  type:
+    type: string
+    const: approval.rejected
+    description: イベントの種別。
+  approval:
+    $ref: ./Approval.yaml
+  reason:
+    $ref: ./EnumApprovalRejectReason.yaml
+  comment:
+    type: string
+    minLength: 1
+    description: 拒否で付けられた理由。`reason` が `denied` で、答えに `comment` が付いていたときだけ持つ。

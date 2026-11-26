@@ -1,0 +1,8 @@
+in: path
+name: id
+required: true
+description:
+  $ref: "./descriptions/ApprovalId.md"
+schema:
+  type: string
+  minLength: 1

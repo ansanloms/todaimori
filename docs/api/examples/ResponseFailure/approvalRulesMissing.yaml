@@ -1,0 +1,4 @@
+type: about:blank
+title: Bad Request
+status: 400
+detail: この承認は規則を持たないので、allowAlways では答えられない。
