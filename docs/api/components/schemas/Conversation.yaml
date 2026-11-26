@@ -7,6 +7,10 @@ required:
 properties:
   id:
     type: string
-    description: 会話の ID。server が発行する不透明な文字列である。
+    minLength: 1
+    maxLength: 128
+    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
+    description:
+      $ref: "../parameters/descriptions/ConversationId.md"
   status:
     $ref: ./EnumConversationStatus.yaml

@@ -1,4 +1,0 @@
-description:
-  $ref: "./descriptions/ResponsePostConversations.md"
-allOf:
-  - $ref: ./Conversation.yaml

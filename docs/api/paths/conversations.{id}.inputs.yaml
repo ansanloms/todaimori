@@ -1,11 +1,5 @@
 parameters:
-  - in: path
-    name: id
-    required: true
-    description: 会話の ID。
-    schema:
-      type: string
-      minLength: 1
+  - $ref: ../components/parameters/ConversationId.yaml
 post:
   operationId: postConversationsIdInputs
   summary: 入力の送信。
@@ -27,7 +21,7 @@ post:
     202:
       description: 入力を受理した場合。処理の完了は待たない。
     400:
-      description: body が不正な場合。
+      description: ID または body が不正な場合。
       content:
         application/problem+json:
           schema:
@@ -36,6 +30,9 @@ post:
             badRequest:
               value:
                 $ref: ../examples/ResponseFailure/badRequest.yaml
+            invalidId:
+              value:
+                $ref: ../examples/ResponseFailure/invalidId.yaml
     404:
       description: 会話が存在しない場合。
       content:

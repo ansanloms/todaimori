@@ -1,0 +1,90 @@
+parameters:
+  - $ref: ../components/parameters/ConversationId.yaml
+put:
+  operationId: putConversationsId
+  summary: 会話の作成。
+  tags:
+    - conversations
+  description:
+    $ref: ./descriptions/putConversationsId.md
+  responses:
+    200:
+      description: 会話が既に存在する場合。何も変えない。
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ResponsePutConversationsId.yaml
+          examples:
+            existing:
+              value:
+                $ref: ../examples/ResponsePutConversationsId/default.yaml
+    201:
+      description: 会話を作成した場合。
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ResponsePutConversationsId.yaml
+          examples:
+            created:
+              value:
+                $ref: ../examples/ResponsePutConversationsId/default.yaml
+    400:
+      description: ID が不正な場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            invalidId:
+              value:
+                $ref: ../examples/ResponseFailure/invalidId.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml
+delete:
+  operationId: deleteConversationsId
+  summary: 会話の削除。
+  tags:
+    - conversations
+  description:
+    $ref: ./descriptions/deleteConversationsId.md
+  responses:
+    204:
+      description: 削除した場合。
+    400:
+      description: ID が不正な場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            invalidId:
+              value:
+                $ref: ../examples/ResponseFailure/invalidId.yaml
+    404:
+      description: 会話が存在しない場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            notFound:
+              value:
+                $ref: ../examples/ResponseFailure/notFound.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml

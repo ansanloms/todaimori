@@ -1,0 +1,4 @@
+type: about:blank
+title: Bad Request
+status: 400
+detail: "id は英数字で始まり、英数字と . _ : - だけを含む 128 文字以内の文字列で指定する。"

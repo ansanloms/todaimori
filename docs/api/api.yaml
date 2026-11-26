@@ -8,8 +8,8 @@ servers:
   - url: https://api.example.org
     description: Production Server
 paths:
-  /conversations:
-    $ref: ./paths/conversations.yaml
+  /conversations/{id}:
+    $ref: ./paths/conversations.{id}.yaml
   /conversations/{id}/inputs:
     $ref: ./paths/conversations.{id}.inputs.yaml
   /conversations/{id}/stop:
@@ -17,6 +17,9 @@ paths:
   /events:
     $ref: ./paths/events.yaml
 components:
+  parameters:
+    ConversationId:
+      $ref: ./components/parameters/ConversationId.yaml
   schemas:
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
@@ -40,6 +43,6 @@ components:
       $ref: ./components/schemas/ResponseFailure.yaml
     ResponseGetEvents:
       $ref: ./components/schemas/ResponseGetEvents.yaml
-    ResponsePostConversations:
-      $ref: ./components/schemas/ResponsePostConversations.yaml
+    ResponsePutConversationsId:
+      $ref: ./components/schemas/ResponsePutConversationsId.yaml
 security: []
