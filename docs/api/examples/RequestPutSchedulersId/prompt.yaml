@@ -1,3 +1,6 @@
 type: prompt
 input: 昨日の記録を読み、memory を整理してほしい。
 schedule: "30 4 * * *"
+settings:
+  model: opus
+  effort: high

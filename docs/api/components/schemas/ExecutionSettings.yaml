@@ -1,0 +1,15 @@
+type: object
+description:
+  $ref: "./descriptions/ExecutionSettings.md"
+required:
+  - model
+  - effort
+properties:
+  model:
+    type: string
+    minLength: 1
+    description: モデルの名前。エイリアスでも完全な名前でもよい。
+  effort:
+    type: string
+    minLength: 1
+    description: 推論の強さ。値はエンジンごとに違う。

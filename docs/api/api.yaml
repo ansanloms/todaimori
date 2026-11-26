@@ -12,6 +12,8 @@ paths:
     $ref: ./paths/conversations.{id}.yaml
   /conversations/{id}/inputs:
     $ref: ./paths/conversations.{id}.inputs.yaml
+  /conversations/{id}/settings:
+    $ref: ./paths/conversations.{id}.settings.yaml
   /conversations/{id}/stop:
     $ref: ./paths/conversations.{id}.stop.yaml
   /events:
@@ -37,6 +39,8 @@ components:
       $ref: ./components/schemas/EventFailure.yaml
     EventMessageCreated:
       $ref: ./components/schemas/EventMessageCreated.yaml
+    ExecutionSettings:
+      $ref: ./components/schemas/ExecutionSettings.yaml
     Failure:
       $ref: ./components/schemas/Failure.yaml
     Message:
@@ -51,6 +55,8 @@ components:
       $ref: ./components/schemas/EnumSchedulerType.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
+    RequestPutConversationsIdSettings:
+      $ref: ./components/schemas/RequestPutConversationsIdSettings.yaml
     RequestPutSchedulersId:
       $ref: ./components/schemas/RequestPutSchedulersId.yaml
     ResponseFailure:
@@ -63,6 +69,8 @@ components:
       $ref: ./components/schemas/ResponseGetSchedulersId.yaml
     ResponsePutConversationsId:
       $ref: ./components/schemas/ResponsePutConversationsId.yaml
+    ResponsePutConversationsIdSettings:
+      $ref: ./components/schemas/ResponsePutConversationsIdSettings.yaml
     ResponsePutSchedulersId:
       $ref: ./components/schemas/ResponsePutSchedulersId.yaml
 security: []

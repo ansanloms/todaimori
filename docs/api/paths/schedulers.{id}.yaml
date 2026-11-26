@@ -102,6 +102,9 @@ put:
             badRequest:
               value:
                 $ref: ../examples/ResponseFailure/schedulerInvalid.yaml
+            invalidSettings:
+              value:
+                $ref: ../examples/ResponseFailure/schedulerInvalidSettings.yaml
             invalidId:
               value:
                 $ref: ../examples/ResponseFailure/invalidId.yaml

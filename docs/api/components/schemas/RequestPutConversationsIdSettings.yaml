@@ -1,0 +1,5 @@
+description:
+  $ref: "./descriptions/RequestPutConversationsIdSettings.md"
+unevaluatedProperties: false
+allOf:
+  - $ref: ./ExecutionSettings.yaml

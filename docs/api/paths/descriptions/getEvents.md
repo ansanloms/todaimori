@@ -2,7 +2,7 @@
 
 イベントの種別は data の `type` で表す。SSE の `event` フィールドは使わない。
 
-会話が実行中かどうかは `conversation` の `status` で分かる。`running` は実行している状態、`idle` は実行していない状態である。待っている入力があるかどうかは含まない。状態が変わると `conversation.updated` が流れる。
+会話が実行中かどうかは `conversation` の `status` で分かる。`running` は実行している状態、`idle` は実行していない状態である。待っている入力があるかどうかは含まない。状態が変わると `conversation.updated` が流れる。会話の設定が変わったときも流れる。
 
 実行が終わるたびに `status` は `idle` になる。待っている入力があれば、続けて `running` に戻る。`idle` になった時点が応答の区切りである。
 

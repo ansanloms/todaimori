@@ -33,3 +33,6 @@ properties:
     maxLength: 128
     pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
     description: 届け先の会話の ID。type が conversation.input のときは必須で、それ以外では書けない。
+  settings:
+    $ref: ./ExecutionSettings.yaml
+    description: AI の実行の設定。type が prompt のときは必ず持ち、それ以外では持たない。登録時に省いた場合は、server の既定値が入る。

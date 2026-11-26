@@ -8,6 +8,9 @@
   input: 昨日の記録を読み、memory を整理してほしい。
   schedule: "30 4 * * *"
   once: false
+  settings:
+    model: opus
+    effort: high
 - id: morning-brief
   type: conversation.input
   input: 今日の予定を教えてほしい。
