@@ -1,9 +1,12 @@
 description:
   $ref: "./descriptions/ServerEvent.md"
 oneOf:
-  - $ref: ./EventConversationUpdated.yaml
-  - $ref: ./EventMessageCreated.yaml
-  - $ref: ./EventFailure.yaml
-  - $ref: ./EventApprovalRequested.yaml
-  - $ref: ./EventApprovalResolved.yaml
-  - $ref: ./EventApprovalRejected.yaml
+  - $ref: ./ServerEventConversationRunning.yaml
+  - $ref: ./ServerEventConversationWaiting.yaml
+  - $ref: ./ServerEventConversationIdle.yaml
+  - $ref: ./ServerEventConversationUpdated.yaml
+  - $ref: ./ServerEventMessageCreated.yaml
+  - $ref: ./ServerEventFailure.yaml
+  - $ref: ./ServerEventApprovalRequested.yaml
+  - $ref: ./ServerEventApprovalResolved.yaml
+  - $ref: ./ServerEventApprovalRejected.yaml

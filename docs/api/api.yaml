@@ -41,18 +41,6 @@ components:
       $ref: ./components/schemas/Approval.yaml
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
-    EventApprovalRejected:
-      $ref: ./components/schemas/EventApprovalRejected.yaml
-    EventApprovalRequested:
-      $ref: ./components/schemas/EventApprovalRequested.yaml
-    EventApprovalResolved:
-      $ref: ./components/schemas/EventApprovalResolved.yaml
-    EventConversationUpdated:
-      $ref: ./components/schemas/EventConversationUpdated.yaml
-    EventFailure:
-      $ref: ./components/schemas/EventFailure.yaml
-    EventMessageCreated:
-      $ref: ./components/schemas/EventMessageCreated.yaml
     ExecutionSettings:
       $ref: ./components/schemas/ExecutionSettings.yaml
     Failure:
@@ -63,12 +51,28 @@ components:
       $ref: ./components/schemas/Scheduler.yaml
     ServerEvent:
       $ref: ./components/schemas/ServerEvent.yaml
+    ServerEventApprovalRejected:
+      $ref: ./components/schemas/ServerEventApprovalRejected.yaml
+    ServerEventApprovalRequested:
+      $ref: ./components/schemas/ServerEventApprovalRequested.yaml
+    ServerEventApprovalResolved:
+      $ref: ./components/schemas/ServerEventApprovalResolved.yaml
+    ServerEventConversationIdle:
+      $ref: ./components/schemas/ServerEventConversationIdle.yaml
+    ServerEventConversationRunning:
+      $ref: ./components/schemas/ServerEventConversationRunning.yaml
+    ServerEventConversationUpdated:
+      $ref: ./components/schemas/ServerEventConversationUpdated.yaml
+    ServerEventConversationWaiting:
+      $ref: ./components/schemas/ServerEventConversationWaiting.yaml
+    ServerEventFailure:
+      $ref: ./components/schemas/ServerEventFailure.yaml
+    ServerEventMessageCreated:
+      $ref: ./components/schemas/ServerEventMessageCreated.yaml
     EnumApprovalAnswer:
       $ref: ./components/schemas/EnumApprovalAnswer.yaml
     EnumApprovalRejectReason:
       $ref: ./components/schemas/EnumApprovalRejectReason.yaml
-    EnumConversationStatus:
-      $ref: ./components/schemas/EnumConversationStatus.yaml
     EnumSchedulerType:
       $ref: ./components/schemas/EnumSchedulerType.yaml
     RequestPostApprovalsIdAnswer:
@@ -96,3 +100,12 @@ components:
     ResponsePutSchedulersId:
       $ref: ./components/schemas/ResponsePutSchedulersId.yaml
 security: []
+tags:
+  - name: approvals
+    description: 承認の取得と答えの送信。
+  - name: conversations
+    description: 会話の入力・設定・停止・削除。
+  - name: events
+    description: 全会話のイベントの購読。
+  - name: schedulers
+    description: 定期実行の登録・取得・実行・削除。

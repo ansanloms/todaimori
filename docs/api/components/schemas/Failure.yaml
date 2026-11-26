@@ -8,8 +8,7 @@ required:
 properties:
   type:
     type: string
-    format: uri
-    default: "about:blank"
+    format: uri-reference
     description: 問題種別を識別する URI reference。
   title:
     type: string

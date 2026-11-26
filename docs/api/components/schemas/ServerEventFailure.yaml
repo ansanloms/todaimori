@@ -1,0 +1,16 @@
+type: object
+description:
+  $ref: "./descriptions/ServerEventFailure.md"
+required:
+  - type
+  - conversation
+  - failure
+properties:
+  type:
+    type: string
+    const: failure
+    description: イベントの種別。
+  conversation:
+    $ref: ./Conversation.yaml
+  failure:
+    $ref: ./Failure.yaml

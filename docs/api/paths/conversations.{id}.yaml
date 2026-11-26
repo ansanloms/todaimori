@@ -75,9 +75,9 @@ delete:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            conversationNotFound:
               value:
-                $ref: ../examples/ResponseFailure/notFound.yaml
+                $ref: ../examples/ResponseFailure/conversationNotFound.yaml
     500:
       description: 処理失敗時。
       content:

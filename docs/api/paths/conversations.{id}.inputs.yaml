@@ -14,7 +14,7 @@ post:
         schema:
           $ref: ../components/schemas/RequestPostConversationsIdInputs.yaml
         examples:
-          normal:
+          default:
             value:
               $ref: ../examples/RequestPostConversationsIdInputs/default.yaml
   responses:
@@ -27,9 +27,9 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            badRequest:
+            inputInvalidText:
               value:
-                $ref: ../examples/ResponseFailure/badRequest.yaml
+                $ref: ../examples/ResponseFailure/inputInvalidText.yaml
             invalidId:
               value:
                 $ref: ../examples/ResponseFailure/invalidId.yaml
@@ -40,9 +40,9 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            conversationNotFound:
               value:
-                $ref: ../examples/ResponseFailure/notFound.yaml
+                $ref: ../examples/ResponseFailure/conversationNotFound.yaml
     500:
       description: 処理失敗時。
       content:

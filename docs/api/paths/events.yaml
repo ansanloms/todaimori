@@ -17,31 +17,37 @@ get:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/conversationRunning.yaml
               serializedValue: |+
-                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}}}
+                data: {"type":"conversation.running","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}}}
 
             messageCreated:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/messageCreated.yaml
               serializedValue: |+
-                data: {"type":"message.created","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}
+                data: {"type":"message.created","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}
 
             conversationIdle:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/conversationIdle.yaml
               serializedValue: |+
-                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle","settings":{"model":"opus","effort":"high"}}}
+                data: {"type":"conversation.idle","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}}}
 
             failure:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/failure.yaml
               serializedValue: |+
-                data: {"type":"failure","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}},"failure":{"type":"about:blank","title":"Internal Server Error","status":500,"detail":"実行に失敗した。"}}
+                data: {"type":"failure","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"failure":{"type":"about:blank","title":"Internal Server Error","status":500,"detail":"実行に失敗した。"}}
 
             conversationWaiting:
               dataValue:
                 $ref: ../examples/ResponseGetEvents/conversationWaiting.yaml
               serializedValue: |+
-                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"waiting","settings":{"model":"opus","effort":"high"}}}
+                data: {"type":"conversation.waiting","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}}}
+
+            conversationUpdated:
+              dataValue:
+                $ref: ../examples/ResponseGetEvents/conversationUpdated.yaml
+              serializedValue: |+
+                data: {"type":"conversation.updated","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}}}
 
             approvalRequested:
               dataValue:
