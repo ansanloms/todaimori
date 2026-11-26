@@ -4,6 +4,7 @@ description:
 required:
   - id
   - status
+  - settings
 properties:
   id:
     type: string
@@ -14,3 +15,5 @@ properties:
       $ref: "../parameters/descriptions/ConversationId.md"
   status:
     $ref: ./EnumConversationStatus.yaml
+  settings:
+    $ref: ./ConversationSettings.yaml

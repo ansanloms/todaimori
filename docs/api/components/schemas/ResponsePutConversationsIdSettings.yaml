@@ -1,0 +1,4 @@
+description:
+  $ref: "./descriptions/ResponsePutConversationsIdSettings.md"
+allOf:
+  - $ref: ./Conversation.yaml

@@ -12,6 +12,8 @@ paths:
     $ref: ./paths/conversations.{id}.yaml
   /conversations/{id}/inputs:
     $ref: ./paths/conversations.{id}.inputs.yaml
+  /conversations/{id}/settings:
+    $ref: ./paths/conversations.{id}.settings.yaml
   /conversations/{id}/stop:
     $ref: ./paths/conversations.{id}.stop.yaml
   /events:
@@ -23,6 +25,8 @@ components:
   schemas:
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
+    ConversationSettings:
+      $ref: ./components/schemas/ConversationSettings.yaml
     EventConversationUpdated:
       $ref: ./components/schemas/EventConversationUpdated.yaml
     EventFailure:
@@ -39,10 +43,14 @@ components:
       $ref: ./components/schemas/EnumConversationStatus.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
+    RequestPutConversationsIdSettings:
+      $ref: ./components/schemas/RequestPutConversationsIdSettings.yaml
     ResponseFailure:
       $ref: ./components/schemas/ResponseFailure.yaml
     ResponseGetEvents:
       $ref: ./components/schemas/ResponseGetEvents.yaml
     ResponsePutConversationsId:
       $ref: ./components/schemas/ResponsePutConversationsId.yaml
+    ResponsePutConversationsIdSettings:
+      $ref: ./components/schemas/ResponsePutConversationsIdSettings.yaml
 security: []
