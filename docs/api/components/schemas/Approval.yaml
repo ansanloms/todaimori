@@ -6,7 +6,6 @@ required:
   - conversationId
   - toolName
   - input
-  - status
   - requestedAt
   - expiresAt
 properties:
@@ -37,8 +36,6 @@ properties:
       type: string
       minLength: 1
     description: 「今後は聞かない」で答えたときに覚える規則の表示用の文字列。例は `Bash(npm run *)` である。この項目が無い承認には「今後は聞かない」で答えられない。client は中身を解釈せず、表示だけに使う。
-  status:
-    $ref: ./EnumApprovalStatus.yaml
   requestedAt:
     type: string
     format: date-time

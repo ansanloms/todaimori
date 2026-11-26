@@ -1,8 +1,7 @@
 type: string
 description:
-  $ref: "./descriptions/EnumApprovalStatus.md"
+  $ref: "./descriptions/EnumApprovalResult.md"
 enum:
-  - pending
   - allowed
   - denied
   - expired

@@ -1,4 +1,4 @@
-全会話のイベントが 1 本に流れる。会話のイベントは `conversation` を持つ。承認のイベント (`approval.requested`・`approval.resolved`) は `conversation` ではなく `approval` を持つ。client は `type` を確かめてから中身を読む。承認の要求と解決はここに流れる。答えは `POST /approvals/{id}/answer` で送り、取り直しは `GET /approvals` で行う。質問を将来足す場合も、同じ形にする。
+全会話のイベントが 1 本に流れる。会話のイベントは `conversation` を持つ。承認のイベント (`approval.requested`・`approval.resolved`) は `conversation` ではなく `approval` を持つ。client は `type` を確かめてから中身を読む。承認の要求と解決はここに流れる。`approval.requested` は `approval` を持ち、`approval.resolved` は消える直前の `approval` と解決の結果 `result` を持つ。答えは `POST /approvals/{id}/answer` で送り、取り直しは `GET /approvals` で行う。質問を将来足す場合も、同じ形にする。
 
 イベントの種別は data の `type` で表す。SSE の `event` フィールドは使わない。
 

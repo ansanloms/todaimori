@@ -4,6 +4,7 @@ description:
 required:
   - type
   - approval
+  - result
 properties:
   type:
     type: string
@@ -11,3 +12,5 @@ properties:
     description: イベントの種別。
   approval:
     $ref: ./Approval.yaml
+  result:
+    $ref: ./EnumApprovalResult.yaml

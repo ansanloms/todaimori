@@ -6,7 +6,6 @@
   description: ビルドを実行する。
   rules:
     - Bash(npm run *)
-  status: pending
   requestedAt: "2026-11-26T09:00:00Z"
   expiresAt: "2026-11-26T09:10:00Z"
 - id: a-0002
@@ -14,6 +13,5 @@
   toolName: Bash
   input:
     command: rm -rf ./dist
-  status: pending
   requestedAt: "2026-11-26T09:01:00Z"
   expiresAt: "2026-11-26T09:11:00Z"

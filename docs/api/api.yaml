@@ -63,8 +63,8 @@ components:
       $ref: ./components/schemas/ServerEvent.yaml
     EnumApprovalAnswer:
       $ref: ./components/schemas/EnumApprovalAnswer.yaml
-    EnumApprovalStatus:
-      $ref: ./components/schemas/EnumApprovalStatus.yaml
+    EnumApprovalResult:
+      $ref: ./components/schemas/EnumApprovalResult.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
     EnumSchedulerType:
