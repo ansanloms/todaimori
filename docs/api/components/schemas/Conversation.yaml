@@ -15,4 +15,4 @@ properties:
   status:
     $ref: ./EnumConversationStatus.yaml
   settings:
-    $ref: ./ConversationSettings.yaml
+    $ref: ./ExecutionSettings.yaml

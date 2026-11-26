@@ -1,6 +1,6 @@
 type: object
 description:
-  $ref: "./descriptions/ConversationSettings.md"
+  $ref: "./descriptions/ExecutionSettings.md"
 properties:
   model:
     type: string

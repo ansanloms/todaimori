@@ -33,14 +33,14 @@ components:
   schemas:
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
-    ConversationSettings:
-      $ref: ./components/schemas/ConversationSettings.yaml
     EventConversationUpdated:
       $ref: ./components/schemas/EventConversationUpdated.yaml
     EventFailure:
       $ref: ./components/schemas/EventFailure.yaml
     EventMessageCreated:
       $ref: ./components/schemas/EventMessageCreated.yaml
+    ExecutionSettings:
+      $ref: ./components/schemas/ExecutionSettings.yaml
     Failure:
       $ref: ./components/schemas/Failure.yaml
     Message:
