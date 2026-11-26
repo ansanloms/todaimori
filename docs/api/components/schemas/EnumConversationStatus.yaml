@@ -1,7 +1,0 @@
-type: string
-description:
-  $ref: "./descriptions/EnumConversationStatus.md"
-enum:
-  - idle
-  - running
-  - waiting

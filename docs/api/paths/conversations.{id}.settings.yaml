@@ -14,7 +14,7 @@ put:
         schema:
           $ref: ../components/schemas/RequestPutConversationsIdSettings.yaml
         examples:
-          normal:
+          default:
             value:
               $ref: ../examples/RequestPutConversationsIdSettings/default.yaml
   responses:
@@ -38,9 +38,9 @@ put:
             invalidId:
               value:
                 $ref: ../examples/ResponseFailure/invalidId.yaml
-            invalidSettings:
+            conversationInvalidSettings:
               value:
-                $ref: ../examples/ResponseFailure/invalidSettings.yaml
+                $ref: ../examples/ResponseFailure/conversationInvalidSettings.yaml
     404:
       description: 会話が存在しない場合。
       content:
@@ -48,9 +48,9 @@ put:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            conversationNotFound:
               value:
-                $ref: ../examples/ResponseFailure/notFound.yaml
+                $ref: ../examples/ResponseFailure/conversationNotFound.yaml
     500:
       description: 処理失敗時。
       content:

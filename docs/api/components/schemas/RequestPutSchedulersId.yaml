@@ -16,6 +16,7 @@ properties:
     description: 動かす内容。type が command ならコマンド行、それ以外は AI へ送る本文である。空白だけの文字列は受け付けない。
   schedule:
     type: string
+    minLength: 1
     description: 動かす時刻。cron の書式 (分・時・日・月・曜日の 5 欄) で書く。時刻は server の時間帯で解釈する。
   once:
     type: boolean

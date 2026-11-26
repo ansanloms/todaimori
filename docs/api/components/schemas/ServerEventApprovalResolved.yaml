@@ -1,6 +1,6 @@
 type: object
 description:
-  $ref: "./descriptions/EventApprovalResolved.md"
+  $ref: "./descriptions/ServerEventApprovalResolved.md"
 required:
   - type
   - approval
