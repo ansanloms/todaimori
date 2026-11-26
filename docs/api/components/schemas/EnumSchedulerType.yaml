@@ -1,0 +1,7 @@
+type: string
+description:
+  $ref: "./descriptions/EnumSchedulerType.md"
+enum:
+  - command
+  - prompt
+  - conversation.input

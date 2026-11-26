@@ -1,0 +1,4 @@
+type: about:blank
+title: Conflict
+status: 409
+detail: 同じ定義の前回の実行がまだ終わっていない。

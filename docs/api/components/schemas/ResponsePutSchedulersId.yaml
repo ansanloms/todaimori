@@ -1,0 +1,4 @@
+description:
+  $ref: "./descriptions/ResponsePutSchedulersId.md"
+allOf:
+  - $ref: ./Scheduler.yaml

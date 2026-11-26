@@ -1,0 +1,39 @@
+type: object
+description:
+  $ref: "./descriptions/Scheduler.md"
+required:
+  - id
+  - type
+  - input
+  - schedule
+  - once
+properties:
+  id:
+    type: string
+    minLength: 1
+    maxLength: 128
+    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
+    description:
+      $ref: "../parameters/descriptions/SchedulerId.md"
+  type:
+    $ref: ./EnumSchedulerType.yaml
+  input:
+    type: string
+    minLength: 1
+    pattern: \S
+    description:
+      $ref: "./descriptions/SchedulerInput.md"
+  schedule:
+    type: string
+    description:
+      $ref: "./descriptions/SchedulerSchedule.md"
+  once:
+    type: boolean
+    description: true なら、1 回実行を始めた時点で定義を消す。
+  conversationId:
+    type: string
+    minLength: 1
+    maxLength: 128
+    pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
+    description:
+      $ref: "./descriptions/SchedulerConversationId.md"

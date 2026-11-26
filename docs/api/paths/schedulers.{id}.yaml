@@ -1,0 +1,157 @@
+parameters:
+  - $ref: ../components/parameters/SchedulerId.yaml
+get:
+  operationId: getSchedulersId
+  summary: 定期実行の取得。
+  tags:
+    - schedulers
+  description:
+    $ref: ./descriptions/getSchedulersId.md
+  responses:
+    200:
+      description: 処理成功時。
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ResponseGetSchedulersId.yaml
+          examples:
+            default:
+              value:
+                $ref: ../examples/ResponseGetSchedulersId/default.yaml
+    400:
+      description: ID が不正な場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            invalidId:
+              value:
+                $ref: ../examples/ResponseFailure/invalidId.yaml
+    404:
+      description: 定期実行が存在しない場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            notFound:
+              value:
+                $ref: ../examples/ResponseFailure/schedulerNotFound.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml
+put:
+  operationId: putSchedulersId
+  summary: 定期実行の登録と置き換え。
+  tags:
+    - schedulers
+  description:
+    $ref: ./descriptions/putSchedulersId.md
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RequestPutSchedulersId.yaml
+        examples:
+          command:
+            value:
+              $ref: ../examples/RequestPutSchedulersId/command.yaml
+          prompt:
+            value:
+              $ref: ../examples/RequestPutSchedulersId/prompt.yaml
+          conversationInput:
+            value:
+              $ref: ../examples/RequestPutSchedulersId/conversationInput.yaml
+  responses:
+    200:
+      description: 既にある定義を置き換えた場合。
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ResponsePutSchedulersId.yaml
+          examples:
+            replaced:
+              value:
+                $ref: ../examples/ResponsePutSchedulersId/default.yaml
+    201:
+      description: 定義を作成した場合。
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ResponsePutSchedulersId.yaml
+          examples:
+            created:
+              value:
+                $ref: ../examples/ResponsePutSchedulersId/default.yaml
+    400:
+      description: ID または body が不正な場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            badRequest:
+              value:
+                $ref: ../examples/ResponseFailure/schedulerInvalid.yaml
+            invalidId:
+              value:
+                $ref: ../examples/ResponseFailure/invalidId.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml
+delete:
+  operationId: deleteSchedulersId
+  summary: 定期実行の削除。
+  tags:
+    - schedulers
+  description:
+    $ref: ./descriptions/deleteSchedulersId.md
+  responses:
+    204:
+      description: 削除した場合。
+    400:
+      description: ID が不正な場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            invalidId:
+              value:
+                $ref: ../examples/ResponseFailure/invalidId.yaml
+    404:
+      description: 定期実行が存在しない場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            notFound:
+              value:
+                $ref: ../examples/ResponseFailure/schedulerNotFound.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml
