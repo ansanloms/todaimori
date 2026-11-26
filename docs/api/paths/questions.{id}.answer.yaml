@@ -39,7 +39,7 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            invalidAnswer:
+            questionInvalidAnswer:
               value:
                 $ref: ../examples/ResponseFailure/questionInvalidAnswer.yaml
     404:
@@ -49,7 +49,7 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            questionNotFound:
               value:
                 $ref: ../examples/ResponseFailure/questionNotFound.yaml
     500:

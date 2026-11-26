@@ -1,6 +1,6 @@
 type: object
 description:
-  $ref: "./descriptions/EventQuestionRequested.md"
+  $ref: "./descriptions/ServerEventQuestionRequested.md"
 required:
   - type
   - question

@@ -8,4 +8,4 @@
 
 期限が過ぎるまで答えが無いと、実行を終える。理由 `expired` の `question.rejected` が流れる。
 
-質問を待つ間に `POST /conversations/{id}/inputs` で送った入力は、待たせておき、質問が片付いた後に動かす。片付くには `decline` と期限切れも含む。停止 (`POST /conversations/{id}/stop`) と削除では、質問と一緒に破棄する。
+質問を待つ間に `POST /conversations/{id}/inputs` で送った入力は、待たせておき、質問が片付いた後に動かす。`decline` と期限切れでも片付いたものとして扱う。停止 (`POST /conversations/{id}/stop`) と削除では、質問と一緒に破棄する。
