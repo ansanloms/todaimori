@@ -1,1 +1,1 @@
-data: '{"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle"}}'
+data: '{"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle","settings":{"model":"opus","effort":"high"}}}'
