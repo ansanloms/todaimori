@@ -17,11 +17,12 @@ paths:
   /events:
     $ref: ./paths/events.yaml
 components:
+  parameters:
+    ConversationId:
+      $ref: ./components/parameters/ConversationId.yaml
   schemas:
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
-    ConversationId:
-      $ref: ./components/schemas/ConversationId.yaml
     EventConversationUpdated:
       $ref: ./components/schemas/EventConversationUpdated.yaml
     EventFailure:

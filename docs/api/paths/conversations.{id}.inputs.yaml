@@ -1,10 +1,5 @@
 parameters:
-  - in: path
-    name: id
-    required: true
-    description: 会話の ID。
-    schema:
-      $ref: ../components/schemas/ConversationId.yaml
+  - $ref: ../components/parameters/ConversationId.yaml
 post:
   operationId: postConversationsIdInputs
   summary: 入力の送信。
