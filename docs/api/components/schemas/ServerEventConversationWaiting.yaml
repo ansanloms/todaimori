@@ -1,13 +1,13 @@
 type: object
 description:
-  $ref: "./descriptions/EventConversationUpdated.md"
+  $ref: "./descriptions/ServerEventConversationWaiting.md"
 required:
   - type
   - conversation
 properties:
   type:
     type: string
-    const: conversation.updated
+    const: conversation.waiting
     description: イベントの種別。
   conversation:
     $ref: ./Conversation.yaml

@@ -1,1 +1,1 @@
-data: '{"type":"message.created","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}'
+data: '{"type":"message.created","conversation":{"id":"c-0001","settings":{"model":"opus","effort":"high"}},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}'

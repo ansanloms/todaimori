@@ -35,7 +35,7 @@ get:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            schedulerNotFound:
               value:
                 $ref: ../examples/ResponseFailure/schedulerNotFound.yaml
     500:
@@ -99,10 +99,10 @@ put:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            badRequest:
+            schedulerInvalid:
               value:
                 $ref: ../examples/ResponseFailure/schedulerInvalid.yaml
-            invalidSettings:
+            schedulerInvalidSettings:
               value:
                 $ref: ../examples/ResponseFailure/schedulerInvalidSettings.yaml
             invalidId:
@@ -145,7 +145,7 @@ delete:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            schedulerNotFound:
               value:
                 $ref: ../examples/ResponseFailure/schedulerNotFound.yaml
     500:

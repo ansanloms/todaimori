@@ -27,7 +27,7 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            schedulerNotFound:
               value:
                 $ref: ../examples/ResponseFailure/schedulerNotFound.yaml
     409:
@@ -37,7 +37,7 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            running:
+            schedulerRunning:
               value:
                 $ref: ../examples/ResponseFailure/schedulerRunning.yaml
     500:

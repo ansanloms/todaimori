@@ -36,13 +36,13 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            invalidAnswer:
+            approvalInvalidAnswer:
               value:
                 $ref: ../examples/ResponseFailure/approvalInvalidAnswer.yaml
-            rulesMissing:
+            approvalRulesMissing:
               value:
                 $ref: ../examples/ResponseFailure/approvalRulesMissing.yaml
-            commentNotAllowed:
+            approvalCommentNotAllowed:
               value:
                 $ref: ../examples/ResponseFailure/approvalCommentNotAllowed.yaml
     404:
@@ -52,7 +52,7 @@ post:
           schema:
             $ref: ../components/schemas/ResponseFailure.yaml
           examples:
-            notFound:
+            approvalNotFound:
               value:
                 $ref: ../examples/ResponseFailure/approvalNotFound.yaml
     500:
