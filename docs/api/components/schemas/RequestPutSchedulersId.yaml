@@ -13,12 +13,10 @@ properties:
     type: string
     minLength: 1
     pattern: \S
-    description:
-      $ref: "./descriptions/SchedulerInput.md"
+    description: 動かす内容。type が command ならコマンド行、それ以外は AI へ送る本文である。空白だけの文字列は受け付けない。
   schedule:
     type: string
-    description:
-      $ref: "./descriptions/SchedulerSchedule.md"
+    description: 動かす時刻。cron の書式 (分・時・日・月・曜日の 5 欄) で書く。時刻は server の時間帯で解釈する。
   once:
     type: boolean
     default: false
@@ -28,5 +26,4 @@ properties:
     minLength: 1
     maxLength: 128
     pattern: ^[A-Za-z0-9][A-Za-z0-9._:-]*$
-    description:
-      $ref: "./descriptions/SchedulerConversationId.md"
+    description: 届け先の会話の ID。type が conversation.input のときは必須で、それ以外では書けない。
