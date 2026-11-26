@@ -1,6 +1,9 @@
 type: object
 description:
   $ref: "./descriptions/ExecutionSettings.md"
+required:
+  - model
+  - effort
 properties:
   model:
     type: string

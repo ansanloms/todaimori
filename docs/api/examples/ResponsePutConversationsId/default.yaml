@@ -1,3 +1,5 @@
 id: c-0001
 status: idle
-settings: {}
+settings:
+  model: opus
+  effort: high

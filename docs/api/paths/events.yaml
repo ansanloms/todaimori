@@ -15,19 +15,19 @@ get:
           examples:
             conversationRunning:
               serializedValue: |+
-                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"running","settings":{}}}
+                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}}}
 
             messageCreated:
               serializedValue: |+
-                data: {"type":"message.created","conversation":{"id":"c-0001","status":"running","settings":{}},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}
+                data: {"type":"message.created","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}
 
             conversationIdle:
               serializedValue: |+
-                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle","settings":{}}}
+                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle","settings":{"model":"opus","effort":"high"}}}
 
             failure:
               serializedValue: |+
-                data: {"type":"failure","conversation":{"id":"c-0001","status":"running","settings":{}},"failure":{"type":"about:blank","title":"Internal Server Error","status":500,"detail":"実行に失敗した。"}}
+                data: {"type":"failure","conversation":{"id":"c-0001","status":"running","settings":{"model":"opus","effort":"high"}},"failure":{"type":"about:blank","title":"Internal Server Error","status":500,"detail":"実行に失敗した。"}}
 
     500:
       description: 処理失敗時。
