@@ -9,4 +9,4 @@ properties:
     description: イベントの本体。JSON 文字列である。
     contentMediaType: application/json
     contentSchema:
-      $ref: ./Event.yaml
+      $ref: ./ServerEvent.yaml

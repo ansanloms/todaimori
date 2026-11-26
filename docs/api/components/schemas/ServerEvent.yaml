@@ -1,5 +1,5 @@
 description:
-  $ref: "./descriptions/Event.md"
+  $ref: "./descriptions/ServerEvent.md"
 oneOf:
   - $ref: ./EventConversationUpdated.yaml
   - $ref: ./EventMessageCreated.yaml

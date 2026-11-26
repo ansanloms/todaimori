@@ -20,8 +20,6 @@ components:
   schemas:
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
-    Event:
-      $ref: ./components/schemas/Event.yaml
     EventConversationUpdated:
       $ref: ./components/schemas/EventConversationUpdated.yaml
     EventFailure:
@@ -32,6 +30,8 @@ components:
       $ref: ./components/schemas/Failure.yaml
     Message:
       $ref: ./components/schemas/Message.yaml
+    ServerEvent:
+      $ref: ./components/schemas/ServerEvent.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
     RequestPostConversationsIdInputs:
