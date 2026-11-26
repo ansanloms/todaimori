@@ -25,17 +25,17 @@ get:
               serializedValue: |+
                 data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle"}}
 
-            error:
+            failure:
               serializedValue: |+
-                data: {"type":"error","conversation":{"id":"c-0001","status":"running"},"detail":"実行に失敗した。"}
+                data: {"type":"failure","conversation":{"id":"c-0001","status":"running"},"failure":{"detail":"実行に失敗した。"}}
 
     500:
       description: 処理失敗時。
       content:
         application/problem+json:
           schema:
-            $ref: ../components/schemas/ResponseError.yaml
+            $ref: ../components/schemas/ResponseFailure.yaml
           examples:
             processingFailed:
               value:
-                $ref: ../examples/ResponseError/default.yaml
+                $ref: ../examples/ResponseFailure/default.yaml

@@ -24,18 +24,20 @@ components:
       $ref: ./components/schemas/Event.yaml
     EventConversationUpdated:
       $ref: ./components/schemas/EventConversationUpdated.yaml
-    EventError:
-      $ref: ./components/schemas/EventError.yaml
+    EventFailure:
+      $ref: ./components/schemas/EventFailure.yaml
     EventMessageCreated:
       $ref: ./components/schemas/EventMessageCreated.yaml
+    Failure:
+      $ref: ./components/schemas/Failure.yaml
     Message:
       $ref: ./components/schemas/Message.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
-    ResponseError:
-      $ref: ./components/schemas/ResponseError.yaml
+    ResponseFailure:
+      $ref: ./components/schemas/ResponseFailure.yaml
     ResponseGetEvents:
       $ref: ./components/schemas/ResponseGetEvents.yaml
     ResponsePostConversations:

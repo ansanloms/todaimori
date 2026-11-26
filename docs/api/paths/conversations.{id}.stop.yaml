@@ -21,18 +21,18 @@ post:
       content:
         application/problem+json:
           schema:
-            $ref: ../components/schemas/ResponseError.yaml
+            $ref: ../components/schemas/ResponseFailure.yaml
           examples:
             notFound:
               value:
-                $ref: ../examples/ResponseError/notFound.yaml
+                $ref: ../examples/ResponseFailure/notFound.yaml
     500:
       description: 処理失敗時。
       content:
         application/problem+json:
           schema:
-            $ref: ../components/schemas/ResponseError.yaml
+            $ref: ../components/schemas/ResponseFailure.yaml
           examples:
             processingFailed:
               value:
-                $ref: ../examples/ResponseError/default.yaml
+                $ref: ../examples/ResponseFailure/default.yaml

@@ -3,4 +3,4 @@ description:
 oneOf:
   - $ref: ./EventConversationUpdated.yaml
   - $ref: ./EventMessageCreated.yaml
-  - $ref: ./EventError.yaml
+  - $ref: ./EventFailure.yaml

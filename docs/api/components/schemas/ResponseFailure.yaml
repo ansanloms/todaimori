@@ -1,6 +1,6 @@
 type: object
 description:
-  $ref: "./descriptions/ResponseError.md"
+  $ref: "./descriptions/ResponseFailure.md"
 required:
   - type
   - title

@@ -1,0 +1,9 @@
+type: object
+description:
+  $ref: "./descriptions/Failure.md"
+required:
+  - detail
+properties:
+  detail:
+    type: string
+    description: 失敗の理由。

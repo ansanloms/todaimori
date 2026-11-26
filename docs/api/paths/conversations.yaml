@@ -21,8 +21,8 @@ post:
       content:
         application/problem+json:
           schema:
-            $ref: ../components/schemas/ResponseError.yaml
+            $ref: ../components/schemas/ResponseFailure.yaml
           examples:
             processingFailed:
               value:
-                $ref: ../examples/ResponseError/default.yaml
+                $ref: ../examples/ResponseFailure/default.yaml
