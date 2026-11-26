@@ -1,5 +1,5 @@
 type: string
-description: 会話の状態。値は後から増えうる。
+description: 会話の状態。実行しているかどうかを表す。値は後から増えうる。client は idle 以外の値を処理中として扱う。
 enum:
   - idle
-  - busy
+  - running

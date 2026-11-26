@@ -2,9 +2,13 @@
 
 イベントの種別は data の `type` で表す。SSE の `event` フィールドは使わない。
 
-会話が処理中かどうかは `conversation` の `status` で分かる。`busy` は、実行中の Turn があるか、待っている入力がある状態である。`idle` は、どちらも無い状態である。状態が変わると `conversation.updated` が流れる。
+会話が実行中かどうかは `conversation` の `status` で分かる。`running` は実行している状態、`idle` は実行していない状態である。待っている入力があるかどうかは含まない。状態が変わると `conversation.updated` が流れる。
+
+実行が終わるたびに `status` は `idle` になる。待っている入力があれば、続けて `running` に戻る。`idle` になった時点が応答の区切りである。
 
 AI の応答は、まとまり 1 件ごとに `message.created` で届く。断片では届かない。
+
+実行が失敗すると `error` が流れる。失敗の後も会話は続き、`status` は `idle` になる。
 
 切断中のイベントは再送しない。
 

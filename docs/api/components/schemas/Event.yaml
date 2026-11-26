@@ -13,41 +13,10 @@ oneOf:
       conversation:
         $ref: ./Conversation.yaml
   - type: object
-    description: Turn が始まった。
-    required:
-      - type
-      - conversation
-      - turn
-    properties:
-      type:
-        type: string
-        const: turn.started
-        description: イベントの種別。
-      conversation:
-        $ref: ./Conversation.yaml
-      turn:
-        $ref: ./Turn.yaml
-  - type: object
-    description: Turn が終わった。
-    required:
-      - type
-      - conversation
-      - turn
-    properties:
-      type:
-        type: string
-        const: turn.ended
-        description: イベントの種別。
-      conversation:
-        $ref: ./Conversation.yaml
-      turn:
-        $ref: ./Turn.yaml
-  - type: object
     description: Message ができた。
     required:
       - type
       - conversation
-      - turn
       - message
     properties:
       type:
@@ -56,7 +25,21 @@ oneOf:
         description: イベントの種別。
       conversation:
         $ref: ./Conversation.yaml
-      turn:
-        $ref: ./Turn.yaml
       message:
         $ref: ./Message.yaml
+  - type: object
+    description: 実行が失敗した。
+    required:
+      - type
+      - conversation
+      - detail
+    properties:
+      type:
+        type: string
+        const: error
+        description: イベントの種別。
+      conversation:
+        $ref: ./Conversation.yaml
+      detail:
+        type: string
+        description: 失敗の理由。

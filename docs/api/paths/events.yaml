@@ -13,25 +13,21 @@ get:
           itemSchema:
             $ref: ../components/schemas/ResponseGetEvents.yaml
           examples:
-            conversationBusy:
+            conversationRunning:
               serializedValue: |+
-                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"busy"}}
-
-            turnStarted:
-              serializedValue: |+
-                data: {"type":"turn.started","conversation":{"id":"c-0001","status":"busy"},"turn":{"id":"t-0001","status":"running"}}
+                data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"running"}}
 
             messageCreated:
               serializedValue: |+
-                data: {"type":"message.created","conversation":{"id":"c-0001","status":"busy"},"turn":{"id":"t-0001","status":"running"},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}
-
-            turnEnded:
-              serializedValue: |+
-                data: {"type":"turn.ended","conversation":{"id":"c-0001","status":"busy"},"turn":{"id":"t-0001","status":"completed"}}
+                data: {"type":"message.created","conversation":{"id":"c-0001","status":"running"},"message":{"id":"m-0001","text":"宿まであと 40 km だ。"}}
 
             conversationIdle:
               serializedValue: |+
                 data: {"type":"conversation.updated","conversation":{"id":"c-0001","status":"idle"}}
+
+            error:
+              serializedValue: |+
+                data: {"type":"error","conversation":{"id":"c-0001","status":"running"},"detail":"実行に失敗した。"}
 
     500:
       description: 処理失敗時。

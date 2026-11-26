@@ -24,12 +24,8 @@ components:
       $ref: ./components/schemas/Event.yaml
     Message:
       $ref: ./components/schemas/Message.yaml
-    Turn:
-      $ref: ./components/schemas/Turn.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
-    EnumTurnStatus:
-      $ref: ./components/schemas/EnumTurnStatus.yaml
     RequestPostConversationsIdInputs:
       $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
     ResponseError:
