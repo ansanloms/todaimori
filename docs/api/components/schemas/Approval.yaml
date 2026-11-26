@@ -35,7 +35,7 @@ properties:
     items:
       type: string
       minLength: 1
-    description: 「今後は聞かない」で答えたときに覚える規則の表示用の文字列。例は `Bash(npm run *)` である。この項目が無い承認には「今後は聞かない」で答えられない。client は中身を解釈せず、表示だけに使う。
+    description: 「今後は聞かない」で答えたときに覚える規則の表示用の文字列。例は `Bash(npm run *)` である。この項目が無い承認には「今後は聞かない」で答えられない。`allowAlways` で答えると、ここに挙げた規則をすべて覚える。client は中身を解釈せず、表示だけに使う。
   requestedAt:
     type: string
     format: date-time

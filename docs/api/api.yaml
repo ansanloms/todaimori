@@ -41,6 +41,8 @@ components:
       $ref: ./components/schemas/Approval.yaml
     Conversation:
       $ref: ./components/schemas/Conversation.yaml
+    EventApprovalRejected:
+      $ref: ./components/schemas/EventApprovalRejected.yaml
     EventApprovalRequested:
       $ref: ./components/schemas/EventApprovalRequested.yaml
     EventApprovalResolved:
@@ -63,8 +65,8 @@ components:
       $ref: ./components/schemas/ServerEvent.yaml
     EnumApprovalAnswer:
       $ref: ./components/schemas/EnumApprovalAnswer.yaml
-    EnumApprovalResult:
-      $ref: ./components/schemas/EnumApprovalResult.yaml
+    EnumApprovalRejectReason:
+      $ref: ./components/schemas/EnumApprovalRejectReason.yaml
     EnumConversationStatus:
       $ref: ./components/schemas/EnumConversationStatus.yaml
     EnumSchedulerType:

@@ -6,3 +6,4 @@ oneOf:
   - $ref: ./EventFailure.yaml
   - $ref: ./EventApprovalRequested.yaml
   - $ref: ./EventApprovalResolved.yaml
+  - $ref: ./EventApprovalRejected.yaml
