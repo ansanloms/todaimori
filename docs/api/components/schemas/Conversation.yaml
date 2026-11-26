@@ -1,0 +1,12 @@
+type: object
+description:
+  $ref: "./descriptions/Conversation.md"
+required:
+  - id
+  - status
+properties:
+  id:
+    type: string
+    description: 会話の ID。server が発行する不透明な文字列である。
+  status:
+    $ref: ./EnumConversationStatus.yaml

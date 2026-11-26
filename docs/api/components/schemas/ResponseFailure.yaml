@@ -1,0 +1,4 @@
+description:
+  $ref: "./descriptions/ResponseFailure.md"
+allOf:
+  - $ref: ./Failure.yaml

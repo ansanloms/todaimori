@@ -1,0 +1,4 @@
+type: about:blank
+title: Bad Request
+status: 400
+detail: text は 1 文字以上の空白以外の文字を含む文字列で指定する。

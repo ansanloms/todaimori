@@ -1,0 +1,13 @@
+type: object
+description:
+  $ref: "./descriptions/Message.md"
+required:
+  - id
+  - text
+properties:
+  id:
+    type: string
+    description: Message の ID。server が発行する不透明な文字列である。
+  text:
+    type: string
+    description: 応答の本文。まとまりの全文である。

@@ -1,0 +1,16 @@
+type: object
+description:
+  $ref: "./descriptions/EventMessageCreated.md"
+required:
+  - type
+  - conversation
+  - message
+properties:
+  type:
+    type: string
+    const: message.created
+    description: イベントの種別。
+  conversation:
+    $ref: ./Conversation.yaml
+  message:
+    $ref: ./Message.yaml

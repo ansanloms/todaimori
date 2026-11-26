@@ -1,0 +1,6 @@
+description:
+  $ref: "./descriptions/ServerEvent.md"
+oneOf:
+  - $ref: ./EventConversationUpdated.yaml
+  - $ref: ./EventMessageCreated.yaml
+  - $ref: ./EventFailure.yaml

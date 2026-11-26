@@ -1,0 +1,12 @@
+type: object
+description:
+  $ref: "./descriptions/ResponseGetEvents.md"
+required:
+  - data
+properties:
+  data:
+    type: string
+    description: イベントの本体。JSON 文字列である。
+    contentMediaType: application/json
+    contentSchema:
+      $ref: ./ServerEvent.yaml

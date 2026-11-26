@@ -1,0 +1,58 @@
+parameters:
+  - in: path
+    name: id
+    required: true
+    description: 会話の ID。
+    schema:
+      type: string
+      minLength: 1
+post:
+  operationId: postConversationsIdInputs
+  summary: 入力の送信。
+  tags:
+    - conversations
+  description:
+    $ref: ./descriptions/postConversationsIdInputs.md
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/RequestPostConversationsIdInputs.yaml
+        examples:
+          normal:
+            value:
+              $ref: ../examples/RequestPostConversationsIdInputs/default.yaml
+  responses:
+    202:
+      description: 入力を受理した場合。処理の完了は待たない。
+    400:
+      description: body が不正な場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            badRequest:
+              value:
+                $ref: ../examples/ResponseFailure/badRequest.yaml
+    404:
+      description: 会話が存在しない場合。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            notFound:
+              value:
+                $ref: ../examples/ResponseFailure/notFound.yaml
+    500:
+      description: 処理失敗時。
+      content:
+        application/problem+json:
+          schema:
+            $ref: ../components/schemas/ResponseFailure.yaml
+          examples:
+            processingFailed:
+              value:
+                $ref: ../examples/ResponseFailure/default.yaml

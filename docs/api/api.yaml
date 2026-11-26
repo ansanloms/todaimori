@@ -8,12 +8,38 @@ servers:
   - url: https://api.example.org
     description: Production Server
 paths:
-  /health:
-    $ref: ./paths/health.yaml
+  /conversations:
+    $ref: ./paths/conversations.yaml
+  /conversations/{id}/inputs:
+    $ref: ./paths/conversations.{id}.inputs.yaml
+  /conversations/{id}/stop:
+    $ref: ./paths/conversations.{id}.stop.yaml
+  /events:
+    $ref: ./paths/events.yaml
 components:
   schemas:
-    ResponseEmpty:
-      $ref: ./components/schemas/ResponseEmpty.yaml
-    ResponseError:
-      $ref: ./components/schemas/ResponseError.yaml
+    Conversation:
+      $ref: ./components/schemas/Conversation.yaml
+    EventConversationUpdated:
+      $ref: ./components/schemas/EventConversationUpdated.yaml
+    EventFailure:
+      $ref: ./components/schemas/EventFailure.yaml
+    EventMessageCreated:
+      $ref: ./components/schemas/EventMessageCreated.yaml
+    Failure:
+      $ref: ./components/schemas/Failure.yaml
+    Message:
+      $ref: ./components/schemas/Message.yaml
+    ServerEvent:
+      $ref: ./components/schemas/ServerEvent.yaml
+    EnumConversationStatus:
+      $ref: ./components/schemas/EnumConversationStatus.yaml
+    RequestPostConversationsIdInputs:
+      $ref: ./components/schemas/RequestPostConversationsIdInputs.yaml
+    ResponseFailure:
+      $ref: ./components/schemas/ResponseFailure.yaml
+    ResponseGetEvents:
+      $ref: ./components/schemas/ResponseGetEvents.yaml
+    ResponsePostConversations:
+      $ref: ./components/schemas/ResponsePostConversations.yaml
 security: []
