@@ -6,7 +6,6 @@ required:
   - status
 properties:
   id:
-    type: string
-    description: 会話の ID。server が発行する不透明な文字列である。
+    $ref: ./ConversationId.yaml
   status:
     $ref: ./EnumConversationStatus.yaml
