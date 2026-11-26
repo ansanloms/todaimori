@@ -1,1 +1,1 @@
-失敗。HTTP の応答以外の場所で、失敗の内容を表す。
+失敗。RFC 9457 Problem Details for HTTP APIs の形である。

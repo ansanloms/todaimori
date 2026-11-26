@@ -27,7 +27,7 @@ get:
 
             failure:
               serializedValue: |+
-                data: {"type":"failure","conversation":{"id":"c-0001","status":"running"},"failure":{"detail":"実行に失敗した。"}}
+                data: {"type":"failure","conversation":{"id":"c-0001","status":"running"},"failure":{"type":"about:blank","title":"Internal Server Error","status":500,"detail":"実行に失敗した。"}}
 
     500:
       description: 処理失敗時。
