@@ -7,3 +7,6 @@ oneOf:
   - $ref: ./EventApprovalRequested.yaml
   - $ref: ./EventApprovalResolved.yaml
   - $ref: ./EventApprovalRejected.yaml
+  - $ref: ./EventQuestionRequested.yaml
+  - $ref: ./EventQuestionResolved.yaml
+  - $ref: ./EventQuestionRejected.yaml

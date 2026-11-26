@@ -1,0 +1,7 @@
+type: string
+description:
+  $ref: "./descriptions/EnumQuestionRejectReason.md"
+enum:
+  - declined
+  - expired
+  - cancelled
